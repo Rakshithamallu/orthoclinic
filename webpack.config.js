@@ -7,7 +7,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'static/js/[name].[contenthash:8].js',
-    publicPath: '/',
+    publicPath: process.env.NODE_ENV === 'production' ? '/orthoclinic/' : '/',
     clean: true,
   },
   resolve: {
