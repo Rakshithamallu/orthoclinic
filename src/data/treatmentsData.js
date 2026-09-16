@@ -3,13 +3,15 @@
  * Derived from drshashiorthoclinic.com
  */
 
+
+const BASE = process.env.PUBLIC_URL || '';
 export const TREATMENT_CATEGORIES = [
   {
     id: "knee",
     name: "Knee Arthroscopy",
     shortTitle: "Knee Surgery",
     badge: "Keyhole Precision",
-    image: "/assets/images/knee-arthroscopy.jpg",
+    image: `${BASE}/assets/images/knee-arthroscopy.jpg`,
     summary: "Minimally invasive keyhole procedures for knee ligament tears, meniscus injuries, cartilage damage, and patellar instability.",
     treatments: [
       {
@@ -49,7 +51,7 @@ export const TREATMENT_CATEGORIES = [
     name: "Shoulder Arthroscopy",
     shortTitle: "Shoulder Care",
     badge: "Specialized Arthroscopy",
-    image: "/assets/images/shoulder-arthroscopy.jpg",
+    image: `${BASE}/assets/images/shoulder-arthroscopy.jpg`,
     summary: "Keyhole arthroscopic interventions to repair torn tendons, stabilize recurrent shoulder dislocations, and relieve chronic shoulder pain.",
     treatments: [
       {
@@ -83,7 +85,7 @@ export const TREATMENT_CATEGORIES = [
     name: "Joint Replacement",
     shortTitle: "Joint Replacement",
     badge: "Robotic & Conventional",
-    image: "/assets/images/joint-replacement.jpg",
+    image: `${BASE}/assets/images/joint-replacement.jpg`,
     summary: "State-of-the-art joint replacement for severe arthritis, avascular necrosis, and joint degradation using robotic-assisted and conventional techniques.",
     treatments: [
       {
@@ -123,7 +125,7 @@ export const TREATMENT_CATEGORIES = [
     name: "Fracture & Trauma Care",
     shortTitle: "Fracture Care",
     badge: "Trauma Management",
-    image: "/assets/images/shoulder-arthroscopy.jpg",
+    image: `${BASE}/assets/images/shoulder-arthroscopy.jpg`,
     summary: "Comprehensive management of acute orthopedic fractures, from conservative plaster application to surgical internal fixation.",
     treatments: [
       {
@@ -157,7 +159,7 @@ export const TREATMENT_CATEGORIES = [
     name: "Spine Care",
     shortTitle: "Spine Care",
     badge: "Conservative & Surgical",
-    image: "/assets/images/knee-arthroscopy.jpg",
+    image: `${BASE}/assets/images/knee-arthroscopy.jpg`,
     summary: "Targeted evaluation and treatment of cervical and lumbar spine problems, prioritizing conservative relief before surgical consideration.",
     treatments: [
       {
@@ -191,7 +193,7 @@ export const TREATMENT_CATEGORIES = [
     name: "Ankle & Foot Injury",
     shortTitle: "Foot & Ankle",
     badge: "Mobility Restoration",
-    image: "/assets/images/sports-rehab.jpg",
+    image: `${BASE}/assets/images/sports-rehab.jpg`,
     summary: "Expert treatment for athletic ankle sprains, Achilles tendon ruptures, syndesmotic tears, and foot fracture management.",
     treatments: [
       {
@@ -219,7 +221,7 @@ export const TREATMENT_CATEGORIES = [
     name: "Rheumatoid & Joint Arthritis",
     shortTitle: "Arthritis Care",
     badge: "Joint Preservation",
-    image: "/assets/images/joint-replacement.jpg",
+    image: `${BASE}/assets/images/joint-replacement.jpg`,
     summary: "Comprehensive clinical protocols combining medical disease management, intra-articular therapies, and surgical options for chronic arthritis.",
     treatments: [
       {

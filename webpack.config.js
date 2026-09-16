@@ -1,11 +1,13 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
 
 // Export a function so webpack passes `argv.mode` (production | development)
 module.exports = (env, argv) => {
   const isProd = argv.mode === 'production';
   const publicPath = isProd ? '/orthoclinic/' : '/';
+  const publicUrl = isProd ? '/orthoclinic' : '';
 
   return {
     entry: './src/index.js',
@@ -58,6 +60,9 @@ module.exports = (env, argv) => {
             noErrorOnMissing: true,
           },
         ],
+      }),
+      new webpack.DefinePlugin({
+        'process.env.PUBLIC_URL': JSON.stringify(publicUrl),
       }),
     ],
     devServer: {

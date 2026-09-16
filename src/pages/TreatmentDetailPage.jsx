@@ -129,7 +129,7 @@ const TreatmentDetailPage = ({ onOpenAppointmentModal }) => {
             <div className="sidebar-consult-card">
               <div className="sidebar-doctor-mini">
                 <img
-                  src="/assets/images/dr-shashi-portrait.jpg"
+                  src={`${process.env.PUBLIC_URL || ''}/assets/images/dr-shashi-portrait.jpg`}
                   alt="Dr. Shashikumar M S"
                   className="sidebar-doctor-img"
                 />

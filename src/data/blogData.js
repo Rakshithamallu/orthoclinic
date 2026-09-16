@@ -3,6 +3,8 @@
  * Evidence-based clinical insights aligned with Dr. Shashikumar M S's specialties
  */
 
+
+const BASE = process.env.PUBLIC_URL || '';
 export const BLOG_ARTICLES = [
   {
     id: "understanding-knee-acl-tears",
@@ -13,7 +15,7 @@ export const BLOG_ARTICLES = [
     date: "March 2026",
     author: "Dr. Shashikumar M S",
     authorRole: "Consultant Orthopedic Surgeon",
-    image: "/assets/images/knee-arthroscopy.jpg",
+    image: `${BASE}/assets/images/knee-arthroscopy.jpg`,
     excerpt: "Learn how anterior cruciate ligament (ACL) injuries happen, when keyhole surgery is recommended, and how modern rehabilitation protocols safely return athletes to peak movement.",
     content: {
       introduction: "The Anterior Cruciate Ligament (ACL) is one of the primary stabilizers of the knee joint, preventing the tibia (shin bone) from sliding abnormally forward relative to the femur (thigh bone). When injured during sudden deceleration, cutting maneuvers, or pivoting in football, cricket, or badminton, patients frequently experience a distinct 'pop' followed by swelling and knee instability.",
@@ -47,7 +49,7 @@ export const BLOG_ARTICLES = [
     date: "February 2026",
     author: "Dr. Shashikumar M S",
     authorRole: "Consultant Orthopedic Surgeon",
-    image: "/assets/images/joint-replacement.jpg",
+    image: `${BASE}/assets/images/joint-replacement.jpg`,
     excerpt: "Debunking common myths about severe osteoarthritis, understanding robotic precision alignment, and knowing the clear medical indicators that signal it is time for surgery.",
     content: {
       introduction: "Osteoarthritis of the knee is a degenerative condition characterized by the progressive wear and tear of articular cartilage. As the cartilage erodes, bone rubs on bone, resulting in chronic joint pain, stiffness, nocturnal aching, and progressive bowing of the legs.",
@@ -81,7 +83,7 @@ export const BLOG_ARTICLES = [
     date: "January 2026",
     author: "Dr. Shashikumar M S",
     authorRole: "Consultant Orthopedic Surgeon",
-    image: "/assets/images/shoulder-arthroscopy.jpg",
+    image: `${BASE}/assets/images/shoulder-arthroscopy.jpg`,
     excerpt: "Why persistent night pain and weakness when lifting your arm overhead may indicate a rotator cuff tendon tear, and how keyhole repair restores pain-free function.",
     content: {
       introduction: "The rotator cuff consists of four muscles and their tendons that hold the arm bone (humeral head) firmly in the shallow shoulder socket. Rotator cuff tears are one of the most common causes of persistent shoulder pain and disability in adults.",
@@ -115,7 +117,7 @@ export const BLOG_ARTICLES = [
     date: "December 2025",
     author: "Dr. Shashikumar M S",
     authorRole: "Consultant Orthopedic Surgeon",
-    image: "/assets/images/sports-rehab.jpg",
+    image: `${BASE}/assets/images/sports-rehab.jpg`,
     excerpt: "Practical neuromuscular warm-up drills, core stability tips, and biomechanical conditioning to protect knees, ankles, and shoulders during high-intensity sports.",
     content: {
       introduction: "Whether you are a competitive athlete or an active fitness enthusiast, musculoskeletal sports injuries often occur when high forces exceed the load capacity of ligaments, tendons, or muscles. A proactive approach to joint biomechanics can dramatically decrease injury incidence.",

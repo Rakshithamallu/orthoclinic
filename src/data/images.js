@@ -1,32 +1,38 @@
 /**
  * Centralized Image Configuration
- * Allows easy updates and replacements of all clinic imagery.
+ * Uses process.env.PUBLIC_URL so paths work on GitHub Pages subdirectory
+ * and localhost alike.
  */
+const BASE = process.env.PUBLIC_URL || '';
+
 export const IMAGES = {
   doctor: {
-    portrait: '/assets/images/dr-shashi-portrait.jpg',
+    portrait: `${BASE}/assets/images/dr-shashi-portrait.jpg`,
     alt: 'Dr. Shashikumar M S - Consultant Orthopedic Surgeon',
   },
   hero: {
-    mainVisual: '/assets/images/dr-shashi-portrait.jpg',
-    bgBadge: '/assets/images/knee-arthroscopy.jpg',
+    mainVisual: `${BASE}/assets/images/dr-shashi-portrait.jpg`,
+    bgBadge: `${BASE}/assets/images/knee-arthroscopy.jpg`,
   },
   treatments: {
-    knee: '/assets/images/knee-arthroscopy.jpg',
-    shoulder: '/assets/images/shoulder-arthroscopy.jpg',
-    jointReplacement: '/assets/images/joint-replacement.jpg',
-    sportsRehab: '/assets/images/sports-rehab.jpg',
-    spine: '/assets/images/knee-arthroscopy.jpg',
-    trauma: '/assets/images/shoulder-arthroscopy.jpg',
-    arthritis: '/assets/images/joint-replacement.jpg',
-    footAnkle: '/assets/images/sports-rehab.jpg',
+    knee: `${BASE}/assets/images/knee-arthroscopy.jpg`,
+    shoulder: `${BASE}/assets/images/shoulder-arthroscopy.jpg`,
+    jointReplacement: `${BASE}/assets/images/joint-replacement.jpg`,
+    sportsRehab: `${BASE}/assets/images/sports-rehab.jpg`,
+    spine: `${BASE}/assets/images/knee-arthroscopy.jpg`,
+    trauma: `${BASE}/assets/images/shoulder-arthroscopy.jpg`,
+    arthritis: `${BASE}/assets/images/joint-replacement.jpg`,
+    footAnkle: `${BASE}/assets/images/sports-rehab.jpg`,
   },
   facilities: {
-    consultation: '/assets/images/dr-shashi-portrait.jpg',
-    xray: '/assets/images/knee-arthroscopy.jpg',
-    physiotherapy: '/assets/images/sports-rehab.jpg',
-    plaster: '/assets/images/joint-replacement.jpg',
-    dressing: '/assets/images/shoulder-arthroscopy.jpg',
+    consultation: `${BASE}/assets/images/dr-shashi-portrait.jpg`,
+    xray: `${BASE}/assets/images/knee-arthroscopy.jpg`,
+    physiotherapy: `${BASE}/assets/images/sports-rehab.jpg`,
+    plaster: `${BASE}/assets/images/joint-replacement.jpg`,
+    dressing: `${BASE}/assets/images/shoulder-arthroscopy.jpg`,
+  },
+  video: {
+    ambient: `${BASE}/assets/videos/ortho-care-ambient.webm`,
   },
 };
 

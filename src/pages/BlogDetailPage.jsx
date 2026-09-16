@@ -58,7 +58,7 @@ const BlogDetailPage = ({ onOpenAppointmentModal }) => {
             {/* Author Credit Bar */}
             <div className="article-author-bar">
               <img
-                src="/assets/images/dr-shashi-portrait.jpg"
+                src={`${process.env.PUBLIC_URL || ''}/assets/images/dr-shashi-portrait.jpg`}
                 alt="Dr. Shashikumar M S"
                 className="article-author-avatar"
               />
@@ -118,7 +118,7 @@ const BlogDetailPage = ({ onOpenAppointmentModal }) => {
             <div className="sidebar-consult-card">
               <div className="sidebar-doctor-mini">
                 <img
-                  src="/assets/images/dr-shashi-portrait.jpg"
+                  src={`${process.env.PUBLIC_URL || ''}/assets/images/dr-shashi-portrait.jpg`}
                   alt="Dr. Shashikumar M S"
                   className="sidebar-doctor-img"
                 />

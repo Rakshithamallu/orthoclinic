@@ -30,7 +30,7 @@ const Hero = ({ onOpenAppointmentModal }) => {
           muted
           playsInline
         >
-          <source src="/assets/videos/ortho-care-ambient.webm" type="video/webm" />
+          <source src={`${process.env.PUBLIC_URL || ''}/assets/videos/ortho-care-ambient.webm`} type="video/webm" />
         </video>
         <div className="hero-video-overlay" />
       </div>
