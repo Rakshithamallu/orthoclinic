@@ -1,0 +1,402 @@
+/* ==========================================================================
+   SUBPAGE & DEDICATED FULL PAGE LAYOUTS
+   Dedicated pages for Blog Articles, Treatments, About, Facilities, Contact
+   ========================================================================== */
+
+/* Subpage Hero Banner */
+.subpage-hero {
+  padding-top: 130px;
+  padding-bottom: 56px;
+  background: radial-gradient(circle at 80% 20%, rgba(15, 98, 254, 0.08) 0%, rgba(0, 163, 137, 0.05) 50%, rgba(250, 251, 252, 1) 100%), var(--bg-body);
+  border-bottom: 1px solid var(--border-light);
+  position: relative;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.breadcrumbs a {
+  color: var(--text-secondary);
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+.breadcrumbs a:hover {
+  color: var(--primary);
+}
+
+.breadcrumbs .breadcrumb-separator {
+  color: #94a3b8;
+}
+
+.breadcrumbs .breadcrumb-current {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.subpage-hero-title {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 16px;
+  letter-spacing: -0.025em;
+}
+
+.subpage-hero-sub {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  max-width: 780px;
+  line-height: 1.65;
+}
+
+/* Two-Column Page Layout with Sticky Sidebar */
+.subpage-container {
+  display: grid;
+  grid-template-columns: 1.65fr 0.85fr;
+  gap: 56px;
+  align-items: start;
+  padding-top: 56px;
+  padding-bottom: 96px;
+}
+
+.subpage-container.full-width {
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+/* Back Link Button */
+.subpage-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.925rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 24px;
+  transition: gap var(--transition-fast);
+}
+
+.subpage-back-link:hover {
+  gap: 12px;
+}
+
+/* Article Full Content (Dedicated Blog Page View) */
+.article-full-content {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 48px;
+  box-shadow: var(--shadow-sm);
+}
+
+.article-feature-image-wrap {
+  width: 100%;
+  height: 420px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 36px;
+  box-shadow: var(--shadow-md);
+  background-color: #0b1528;
+}
+
+.article-feature-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.article-author-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background-color: var(--bg-subtle);
+  border-radius: var(--radius-md);
+  margin-bottom: 36px;
+  border: 1px solid var(--border-light);
+}
+
+.article-author-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary);
+}
+
+.article-author-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.article-author-name-tag {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.article-author-title-tag {
+  font-size: 0.8rem;
+  color: var(--accent-teal);
+  font-weight: 700;
+}
+
+.article-intro-lead {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.7;
+  color: var(--text-primary);
+  background-color: #f0f7ff;
+  border-left: 4px solid var(--primary);
+  padding: 24px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 40px;
+}
+
+.article-body-section {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.article-body-section h2,
+.article-body-section h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.article-body-section p {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+.article-takeaways-highlight {
+  background: linear-gradient(135deg, #f0fdf9 0%, #e6f9f4 100%);
+  border: 1.5px solid rgba(0, 163, 137, 0.3);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  margin-bottom: 48px;
+}
+
+.takeaways-highlight-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--accent-teal-dark);
+  margin-bottom: 18px;
+}
+
+.takeaways-highlight-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.takeaways-highlight-list li {
+  position: relative;
+  padding-left: 28px;
+  font-size: 1rem;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.takeaways-highlight-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 800;
+  color: var(--accent-teal);
+  font-size: 1.1rem;
+}
+
+/* Sidebar Clinical Card */
+.subpage-sidebar {
+  position: sticky;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sidebar-consult-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sidebar-doctor-mini {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.sidebar-doctor-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary);
+}
+
+.sidebar-doctor-name {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.sidebar-doctor-role {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.sidebar-card-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.sidebar-card-desc {
+  font-size: 0.925rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.sidebar-contact-details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  background-color: var(--bg-subtle);
+  border-radius: var(--radius-sm);
+  margin-bottom: 24px;
+  font-size: 0.875rem;
+}
+
+.sidebar-contact-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.sidebar-contact-row svg {
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+/* Treatment Subpage Details Layout */
+.treatment-detail-hero-box {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  margin-bottom: 40px;
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.treatment-procedures-full-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.treatment-procedure-full-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-xs);
+  transition: all var(--transition-normal);
+}
+
+.treatment-procedure-full-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: rgba(15, 98, 254, 0.3);
+}
+
+.treatment-proc-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.treatment-proc-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.treatment-proc-desc {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.treatment-proc-indications-box {
+  background-color: var(--bg-subtle);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  font-size: 0.925rem;
+  color: var(--text-primary);
+  border-left: 3px solid var(--accent-teal);
+}
+
+/* Responsive Subpage Queries */
+@media (max-width: 1024px) {
+  .subpage-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .treatment-detail-hero-box {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .article-full-content {
+    padding: 24px 20px;
+  }
+  .article-feature-image-wrap {
+    height: 240px;
+  }
+  .treatment-detail-hero-box {
+    padding: 24px 20px;
+  }
+  .treatment-procedure-full-card {
+    padding: 20px 16px;
+  }
+}

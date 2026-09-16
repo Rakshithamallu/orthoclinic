@@ -1,0 +1,751 @@
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS — Dr. Shashi's Ortho Clinic
+   Breakpoints: 1280px | 1140px | 1024px | 900px | 768px | 600px | 480px | 375px
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Desktop Standard (<= 1280px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  :root {
+    --container-max-width: 1100px;
+    --section-padding-y: 80px;
+  }
+
+  .conditions-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1.2fr 0.8fr 1fr 1fr;
+    gap: 36px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Header: Switch to mobile hamburger at 1140px
+   -------------------------------------------------------------------------- */
+@media (max-width: 1140px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  .mobile-toggle-btn {
+    display: flex !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Tablet Landscape / Small Desktop (<= 1024px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  :root {
+    --container-max-width: 960px;
+    --section-padding-y: 72px;
+  }
+
+  /* --- Header --- */
+  .header-inner {
+    height: 72px;
+  }
+  .site-header .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .desktop-nav {
+    display: none !important;
+  }
+  .mobile-toggle-btn {
+    display: flex !important;
+  }
+
+  /* --- Hero --- */
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .hero-content {
+    align-items: center;
+    text-align: center;
+  }
+  .hero-cta-group {
+    justify-content: center;
+  }
+  .hero-badges-wrapper {
+    justify-content: center;
+  }
+  .hero-doctor-name {
+    justify-content: center;
+  }
+  .hero-description {
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* --- Stats --- */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+  .stat-item:nth-child(2)::after {
+    display: none;
+  }
+
+  /* --- About --- */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .about-image-card {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* --- Fellowships --- */
+  .fellowships-grid {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* --- Conditions / Facilities / Why Choose --- */
+  .conditions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .facilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .facilities-grid .facility-card:nth-child(5) {
+    grid-column: span 2;
+  }
+  .why-choose-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* --- Treatments --- */
+  .treatment-panel-header {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .procedures-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* --- Patient Journey --- */
+  .journey-grid {
+    grid-template-columns: 1fr;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  /* --- Research --- */
+  .research-overview-card {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .publications-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* --- Contact --- */
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* --- Footer --- */
+  .footer-top-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  /* --- Subpages --- */
+  .subpage-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .subpage-sidebar {
+    position: static;
+  }
+  .treatment-detail-hero-box {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Blog grid — 2 col ends at 900px
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .blog-image-wrap {
+    height: 200px;
+  }
+  .article-hero-img-wrap {
+    height: 200px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Tablet Portrait (<= 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  :root {
+    --section-padding-y: 60px;
+  }
+
+  /* --- Header --- */
+  .header-inner {
+    height: 66px;
+  }
+  .header-phone-pill {
+    display: none !important;
+  }
+  .brand-subtitle {
+    display: none;
+  }
+  .brand-title {
+    font-size: 1rem;
+  }
+  .brand-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+  }
+  #header-book-btn {
+    padding: 8px 14px;
+    font-size: 0.82rem;
+  }
+
+  /* --- Hero --- */
+  .hero-section {
+    padding-top: 100px;
+    padding-bottom: 52px;
+  }
+  .hero-float-card-1 {
+    top: 5%;
+    left: -8px;
+  }
+  .hero-float-card-2 {
+    bottom: 5%;
+    right: -8px;
+  }
+  .hero-doctor-img {
+    height: 420px;
+  }
+
+  /* --- Stats --- */
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .stat-item::after {
+    display: none !important;
+  }
+
+  /* --- Conditions --- */
+  .conditions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  /* --- Facilities --- */
+  .facilities-grid {
+    grid-template-columns: 1fr;
+  }
+  .facilities-grid .facility-card:nth-child(5) {
+    grid-column: span 1;
+  }
+
+  /* --- Why Choose --- */
+  .why-choose-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* --- Research --- */
+  .publications-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* --- Treatments active panel --- */
+  .treatment-active-panel {
+    padding: 24px 20px;
+  }
+
+  /* --- Appointment CTA Banner --- */
+  .appointment-cta-banner {
+    padding: 40px 24px;
+  }
+  .cta-banner-title {
+    font-size: 1.75rem;
+  }
+  .cta-button-group {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    align-items: stretch;
+  }
+  .cta-button-group .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* --- Form --- */
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* --- Modal --- */
+  .modal-container {
+    padding: 28px 20px;
+  }
+
+  /* --- Subpages --- */
+  .subpage-hero {
+    padding-top: 100px;
+    padding-bottom: 36px;
+  }
+  .subpage-hero-title {
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
+  }
+  .article-full-content {
+    padding: 24px 20px;
+  }
+  .article-feature-image-wrap {
+    height: 220px;
+  }
+  .treatment-detail-hero-box {
+    padding: 24px 20px;
+  }
+  .treatment-procedure-full-card {
+    padding: 20px 16px;
+  }
+
+  /* --- Section header --- */
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  /* --- Footer --- */
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  /* --- Floating Buttons --- */
+  .floating-action-btn {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+    bottom: 20px;
+  }
+  .floating-whatsapp {
+    right: 16px;
+  }
+  .floating-call {
+    left: 16px;
+  }
+  .back-to-top-btn {
+    bottom: 76px;
+    right: 16px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Mobile (<= 600px) — Mid-size phones
+   -------------------------------------------------------------------------- */
+@media (max-width: 600px) {
+  :root {
+    --section-padding-y: 52px;
+  }
+
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* --- Header --- */
+  .header-inner {
+    height: 62px;
+    gap: 10px;
+  }
+  .site-header .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .brand-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+  }
+  .brand-title {
+    font-size: 0.88rem;
+    white-space: nowrap;
+  }
+  #header-book-btn {
+    display: none; /* rely on mobile drawer CTA instead */
+  }
+  .mobile-toggle-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  /* --- Mobile Drawer width --- */
+  .mobile-drawer {
+    width: 100%;
+    right: -100%;
+  }
+
+  /* --- Hero --- */
+  .hero-section {
+    padding-top: 90px;
+    padding-bottom: 44px;
+  }
+  .hero-float-card {
+    padding: 10px 14px;
+    gap: 10px;
+  }
+  .hero-float-value {
+    font-size: 1.1rem;
+  }
+  .hero-float-label {
+    font-size: 0.68rem;
+  }
+  .hero-float-icon {
+    width: 32px;
+    height: 32px;
+  }
+  .hero-doctor-img {
+    height: 360px;
+  }
+
+  /* --- Stats --- */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  /* --- Conditions --- */
+  .conditions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  /* --- Blogs --- */
+  .blog-card-content {
+    padding: 20px 16px;
+  }
+  .blog-card-title {
+    font-size: 1.15rem;
+  }
+  .blog-filter-bar {
+    gap: 8px;
+  }
+  .blog-filter-pill {
+    padding: 8px 16px;
+    font-size: 0.82rem;
+  }
+
+  /* --- Footer --- */
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .footer-bottom-bar {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+
+  /* --- Section heading sizes --- */
+  h2 {
+    font-size: clamp(1.55rem, 5vw, 2rem);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Small Mobile (<= 480px) — iPhone SE, older Androids
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  :root {
+    --section-padding-y: 48px;
+  }
+
+  /* --- Container --- */
+  .container {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  /* --- Header --- */
+  #header-book-btn {
+    display: none;
+  }
+
+  /* --- Hero --- */
+  .hero-section {
+    padding-top: 84px;
+    padding-bottom: 40px;
+  }
+  .hero-title {
+    font-size: clamp(1.9rem, 7vw, 2.4rem);
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  .hero-doctor-name {
+    font-size: 1.05rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .hero-doctor-img {
+    height: 320px;
+  }
+  .hero-float-card {
+    padding: 8px 12px;
+  }
+  .hero-float-icon {
+    width: 30px;
+    height: 30px;
+  }
+  .hero-float-value {
+    font-size: 1rem;
+  }
+  .hero-float-label {
+    font-size: 0.65rem;
+  }
+  .hero-float-card-1 {
+    top: 4%;
+    left: -4px;
+  }
+  .hero-float-card-2 {
+    bottom: 4%;
+    right: -4px;
+  }
+
+  /* --- Hero CTA --- */
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-cta-group .btn,
+  .hero-cta-group .hero-call-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* --- Stats --- */
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .stat-item {
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .stat-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .stat-number {
+    font-size: 2.2rem;
+  }
+
+  /* --- Conditions --- */
+  .conditions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* --- Blog --- */
+  .blog-image-wrap {
+    height: 180px;
+  }
+
+  /* --- CTA Button Group --- */
+  .cta-button-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  .cta-button-group .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .cta-banner-title {
+    font-size: 1.5rem;
+  }
+
+  /* --- Appointment CTA Banner --- */
+  .appointment-cta-banner {
+    padding: 32px 16px;
+  }
+
+  /* --- Contact card --- */
+  .contact-card {
+    padding: 24px 16px;
+  }
+
+  /* --- Brand --- */
+  .brand-title {
+    font-size: 0.85rem;
+  }
+  .brand-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* --- Footer --- */
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .footer-bottom-bar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* --- Floating Action Buttons --- */
+  .floating-action-btn span.btn-label {
+    display: none;
+  }
+  .floating-action-btn {
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  /* --- Section header spacing --- */
+  .section-header {
+    margin-bottom: 32px;
+  }
+
+  /* --- Subpages --- */
+  .subpage-hero {
+    padding-top: 90px;
+    padding-bottom: 28px;
+  }
+  .subpage-hero-title {
+    font-size: clamp(1.45rem, 6vw, 2rem);
+  }
+  .subpage-hero-sub {
+    font-size: 0.95rem;
+  }
+  .subpage-container {
+    padding-top: 32px;
+    padding-bottom: 56px;
+  }
+  .sidebar-consult-card {
+    padding: 24px 20px;
+  }
+  .article-intro-lead {
+    padding: 16px 18px;
+    font-size: 1.05rem;
+  }
+
+  /* --- Why Choose --- */
+  .why-choose-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Extra Small (<= 375px) — iPhone SE, Galaxy A-series
+   -------------------------------------------------------------------------- */
+@media (max-width: 375px) {
+  :root {
+    --section-padding-y: 44px;
+  }
+
+  html {
+    font-size: 15px;
+  }
+
+  .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .site-header .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  /* Brand logo — compact */
+  .brand-link {
+    gap: 8px;
+  }
+  .brand-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 7px;
+  }
+  .brand-title {
+    font-size: 0.78rem;
+    letter-spacing: -0.01em;
+  }
+
+  /* Hero */
+  .hero-title {
+    font-size: clamp(1.65rem, 8vw, 2rem);
+  }
+  .hero-doctor-img {
+    height: 280px;
+  }
+  .hero-float-card {
+    display: none; /* hide float cards on very small screens to reduce clutter */
+  }
+
+  /* Stats */
+  .stat-number {
+    font-size: 1.9rem;
+  }
+
+  /* Conditions */
+  .condition-card {
+    padding: 20px 16px;
+  }
+
+  /* Blog */
+  .blog-card-title {
+    font-size: 1.05rem;
+  }
+  .blog-card-content {
+    padding: 16px 14px;
+  }
+  .blog-image-wrap {
+    height: 160px;
+  }
+
+  /* Section title */
+  h2 {
+    font-size: clamp(1.35rem, 6vw, 1.7rem);
+  }
+  h3 {
+    font-size: clamp(1.15rem, 5vw, 1.4rem);
+  }
+
+  /* Buttons */
+  .btn {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+
+  /* Mobile drawer */
+  .mobile-nav-item {
+    font-size: 0.95rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Reduced Motion — disable non-essential animations
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

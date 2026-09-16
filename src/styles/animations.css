@@ -1,0 +1,232 @@
+/* ==========================================================================
+   ANIMATIONS, FLOATING ACTIONS & FOOTER STYLES
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. FLOATING ACTION BUTTONS (WHATSAPP & CALL & BACK-TO-TOP)
+   -------------------------------------------------------------------------- */
+.floating-action-btn {
+  position: fixed;
+  bottom: 28px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: all var(--transition-normal);
+  text-decoration: none;
+}
+
+.floating-action-btn:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+  color: #ffffff;
+}
+
+/* WhatsApp Button (Bottom-Right) */
+.floating-whatsapp {
+  right: 28px;
+  background-color: #25d366;
+}
+
+.floating-whatsapp:hover {
+  background-color: #20ba59;
+}
+
+/* Call Button (Bottom-Left) */
+.floating-call {
+  left: 28px;
+  background-color: #0f62fe;
+}
+
+.floating-call:hover {
+  background-color: #0043ce;
+}
+
+/* Floating Back-To-Top Button */
+.back-to-top-btn {
+  position: fixed;
+  bottom: 96px;
+  right: 32px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: var(--text-primary);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+}
+
+.back-to-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top-btn:hover {
+  background-color: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   2. FOOTER STYLES
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background-color: #070e1c;
+  color: #cbd5e1;
+  padding-top: 80px;
+  padding-bottom: 36px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr 1fr 1.2fr;
+  gap: 48px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-brand {
+  margin-bottom: 18px;
+}
+
+.footer-brand-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.footer-brand-title span {
+  color: #38bdf8;
+}
+
+.footer-brand-sub {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #00c49f;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 2px;
+}
+
+.footer-bio {
+  font-size: 0.925rem;
+  color: #94a3b8;
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+.footer-heading {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+
+.footer-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-nav-link {
+  font-size: 0.925rem;
+  color: #94a3b8;
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-nav-link:hover {
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 0.925rem;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+.footer-contact-item svg {
+  color: #38bdf8;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.footer-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 36px;
+  font-size: 0.85rem;
+  color: #64748b;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-disclaimer-box {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 14px 20px;
+  margin-top: 40px;
+  font-size: 0.825rem;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   3. KEYFRAME ANIMATIONS & PULSE
+   -------------------------------------------------------------------------- */
+@keyframes pulseBadge {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.pulse-badge {
+  animation: pulseBadge 3s ease-in-out infinite;
+}
+
+/* Shimmer Loading */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
