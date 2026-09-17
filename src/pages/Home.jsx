@@ -1,19 +1,17 @@
 import React from 'react';
-import Hero from '../components/Hero';
-import Stats from '../components/Stats';
+import AboutDoctor from '../components/AboutDoctor';
 import WhyChooseUs from '../components/WhyChooseUs';
-import FAQ from '../components/FAQ';
 import AppointmentCTA from '../components/AppointmentCTA';
+import FAQ from '../components/FAQ';
 import Contact from '../components/Contact';
 
 const Home = ({ onOpenAppointmentModal }) => {
   return (
     <div className="home-page">
-      <Hero onOpenAppointmentModal={onOpenAppointmentModal} />
-      <Stats />
+      <AboutDoctor onOpenAppointmentModal={onOpenAppointmentModal} />
       <WhyChooseUs />
-      <FAQ />
       <AppointmentCTA onOpenAppointmentModal={onOpenAppointmentModal} />
+      <FAQ />
       <Contact />
     </div>
   );

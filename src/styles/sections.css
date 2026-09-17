@@ -80,6 +80,16 @@
 /* --------------------------------------------------------------------------
    2. ABOUT DOCTOR SECTION
    -------------------------------------------------------------------------- */
+.home-page > .section:first-child {
+  padding-top: 130px;
+}
+
+@media (max-width: 768px) {
+  .home-page > .section:first-child {
+    padding-top: 96px;
+  }
+}
+
 .about-grid {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
