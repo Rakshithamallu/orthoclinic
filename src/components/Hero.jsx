@@ -85,7 +85,7 @@ const Hero = ({ onOpenAppointmentModal }) => {
             </div>
 
             <p className="hero-description">
-              Dedicated to restoring active, painless mobility through specialized keyhole arthroscopic procedures, robotic joint replacement, precision fracture care, and tailored conservative rehabilitation in JP Nagar, Mysuru.
+
             </p>
 
             <div className="hero-cta-group">

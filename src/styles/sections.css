@@ -244,6 +244,7 @@
    3. EDUCATION & TRAINING TIMELINE (Scroll-Triggered Animated Cards)
    -------------------------------------------------------------------------- */
 .education-section {
+  overflow-x: hidden;
   overflow-x: clip;
 }
 
@@ -252,6 +253,7 @@
   max-width: 960px;
   margin: 0 auto;
   padding: 20px 0;
+  overflow-x: hidden;
   overflow-x: clip;
 }
 
@@ -393,10 +395,25 @@
     right: auto !important;
   }
   .timeline-item--left .timeline-card {
-    transform: translateX(-60px) scale(0.96);
+    transform: translateX(-35px) scale(0.97);
   }
   .timeline-item--right .timeline-card {
-    transform: translateX(60px) scale(0.96);
+    transform: translateX(35px) scale(0.97);
+  }
+  .timeline-item.in-view .timeline-card {
+    transform: translateX(0) scale(1);
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-card {
+    padding: 20px 16px;
+  }
+  .timeline-item--left .timeline-card {
+    transform: translateX(-20px) scale(0.98);
+  }
+  .timeline-item--right .timeline-card {
+    transform: translateX(20px) scale(0.98);
   }
   .timeline-item.in-view .timeline-card {
     transform: translateX(0) scale(1);

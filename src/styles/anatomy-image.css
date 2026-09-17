@@ -369,6 +369,23 @@
 
 @media (max-width: 480px) {
   .tai-image {
-    height: 190px;
+    height: 200px;
+  }
+  .tai-active-banner {
+    bottom: 8px;
+    left: 8px;
+    right: 8px;
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    gap: 8px;
+  }
+  .tai-active-banner strong {
+    font-size: 0.88rem;
+  }
+  .tai-hint-pill {
+    font-size: 0.68rem;
+    padding: 3px 10px;
+    top: 8px;
+    left: 8px;
   }
 }

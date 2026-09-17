@@ -391,13 +391,12 @@
 }
 
 /* --------------------------------------------------------------------------
-   3. CLINIC FACILITIES CARDS (3D Animated with Directional Scroll-In)
+   3. CLINIC FACILITIES CARDS
    -------------------------------------------------------------------------- */
 .facilities-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
-  perspective: 1200px;
 }
 
 .facilities-grid .facility-card:nth-child(4),
@@ -413,58 +412,11 @@
   box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
+  transition: all var(--transition-normal);
   position: relative;
   overflow: hidden;
-  transform-style: preserve-3d;
-  will-change: transform, opacity, filter, box-shadow;
-  
-  /* Initial scroll-away state */
-  opacity: 0;
-  filter: blur(4px);
-  pointer-events: none;
-  transition:
-    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
-    filter 0.75s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.35s ease,
-    border-color 0.3s ease;
-  transition-delay: calc(var(--card-index, 0) * 0.08s);
 }
 
-/* Directional Entrance:
-   Left cards (1st, 4th) enter from left
-   Center card (2nd) enters from bottom
-   Right cards (3rd, 5th) enter from right */
-.facilities-grid .facility-card:nth-child(3n + 1) {
-  transform: translateX(-70px) translateY(30px) rotateY(-8deg) scale(0.94);
-}
-
-.facilities-grid .facility-card:nth-child(3n + 2) {
-  transform: translateY(60px) scale(0.92);
-}
-
-.facilities-grid .facility-card:nth-child(3n + 3) {
-  transform: translateX(70px) translateY(30px) rotateY(8deg) scale(0.94);
-}
-
-/* Specific 4th and 5th card directional offsets */
-.facilities-grid .facility-card:nth-child(4) {
-  transform: translateX(-60px) translateY(30px) rotateY(-7deg) scale(0.94);
-}
-
-.facilities-grid .facility-card:nth-child(5) {
-  transform: translateX(60px) translateY(30px) rotateY(7deg) scale(0.94);
-}
-
-/* In-View State: smoothly slides into place when scrolled into view */
-.facility-card.in-view {
-  opacity: 1;
-  transform: translateX(0) translateY(0) rotateX(0deg) rotateY(0deg) scale(1);
-  filter: blur(0);
-  pointer-events: auto;
-}
-
-/* Top Accent line */
 .facility-card::before {
   content: '';
   position: absolute;
@@ -472,41 +424,21 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #0f62fe, var(--accent-teal));
-  opacity: 0.25;
-  transition: opacity var(--transition-fast), height var(--transition-fast);
-  z-index: 2;
+  background-color: var(--accent-teal);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.facility-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(0, 163, 137, 0.3);
 }
 
 .facility-card:hover::before {
   opacity: 1;
-  height: 5px;
 }
 
-/* 3D Dynamic Specular Light Glare */
-.facility-card-glare {
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-  background: radial-gradient(
-    circle at var(--glare-x, 50%) var(--glare-y, 50%),
-    rgba(15, 98, 254, 0.12) 0%,
-    rgba(0, 210, 180, 0.08) 35%,
-    transparent 65%
-  );
-  opacity: var(--glare-opacity, 0);
-  transition: opacity 0.3s ease;
-  z-index: 5;
-  mix-blend-mode: multiply;
-}
-
-.facility-card.in-view:hover {
-  box-shadow: 0 24px 48px -12px rgba(15, 98, 254, 0.18), 0 8px 24px rgba(0, 0, 0, 0.06);
-  border-color: rgba(15, 98, 254, 0.35);
-}
-
-/* 3D Depth on inner elements */
 .facility-badge {
   align-self: flex-start;
   font-size: 0.75rem;
@@ -518,13 +450,11 @@
   padding: 4px 12px;
   border-radius: var(--radius-pill);
   margin-bottom: 16px;
-  transform: translateZ(22px);
-  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .facility-icon-wrap {
-  width: 56px;
-  height: 56px;
+  width: 54px;
+  height: 54px;
   border-radius: var(--radius-md);
   background-color: var(--bg-subtle);
   color: var(--primary);
@@ -532,15 +462,12 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 18px;
-  transform: translateZ(30px);
   transition: all var(--transition-normal);
 }
 
 .facility-card:hover .facility-icon-wrap {
   background-color: var(--primary);
   color: #ffffff;
-  transform: translateZ(38px) scale(1.06);
-  box-shadow: 0 8px 20px rgba(15, 98, 254, 0.25);
 }
 
 .facility-title {
@@ -548,12 +475,6 @@
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 12px;
-  transform: translateZ(24px);
-  transition: transform 0.3s ease, color 0.2s ease;
-}
-
-.facility-card:hover .facility-title {
-  color: var(--primary);
 }
 
 .facility-desc {
@@ -562,8 +483,6 @@
   line-height: 1.6;
   margin-bottom: 20px;
   flex-grow: 1;
-  transform: translateZ(16px);
-  transition: transform 0.3s ease;
 }
 
 .facility-features {
@@ -572,8 +491,6 @@
   gap: 8px;
   padding-top: 16px;
   border-top: 1px solid var(--border-light);
-  transform: translateZ(18px);
-  transition: transform 0.3s ease;
 }
 
 .facility-feature-item {
@@ -586,11 +503,10 @@
 }
 
 .facility-check-dot {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent-teal), #0f62fe);
-  box-shadow: 0 0 6px rgba(0, 210, 180, 0.4);
+  background-color: var(--accent-teal);
 }
 
 /* --------------------------------------------------------------------------
@@ -741,3 +657,17 @@
   color: var(--text-secondary);
   line-height: 1.7;
 }
+
+/* ── Mobile Touch Optimization for Cards ── */
+@media (hover: none) {
+  .condition-card {
+    transform: none !important;
+  }
+  .condition-card:active {
+    transform: scale(0.985) !important;
+  }
+  .condition-card-glare {
+    display: none !important;
+  }
+}
+

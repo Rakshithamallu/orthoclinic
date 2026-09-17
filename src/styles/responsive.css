@@ -81,6 +81,13 @@
     margin-left: auto;
     margin-right: auto;
   }
+  .hero-doctor-card {
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
 
   /* --- Stats --- */
   .stats-grid {
@@ -303,11 +310,26 @@
 
   /* --- Subpages --- */
   .subpage-hero {
-    padding-top: 100px;
-    padding-bottom: 36px;
+    padding-top: 96px;
+    padding-bottom: 34px;
   }
   .subpage-hero-title {
-    font-size: clamp(1.6rem, 5vw, 2.2rem);
+    font-size: clamp(1.65rem, 5.8vw, 2.2rem);
+    margin-bottom: 12px;
+  }
+  .subpage-hero-sub {
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+  .breadcrumbs {
+    font-size: 0.82rem;
+    gap: 4px 6px;
+    margin-bottom: 14px;
+  }
+  .subpage-hero .section-badge {
+    font-size: 0.72rem;
+    padding: 4px 12px;
+    margin-bottom: 12px;
   }
   .article-full-content {
     padding: 24px 20px;
@@ -427,8 +449,12 @@
 
   /* --- Conditions --- */
   .conditions-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .condition-card {
+    padding: 22px 18px;
+    border-radius: 16px;
   }
 
   /* --- Blogs --- */
@@ -485,24 +511,45 @@
   /* --- Hero --- */
   .hero-section {
     padding-top: 84px;
-    padding-bottom: 40px;
+    padding-bottom: 36px;
   }
   .hero-title {
-    font-size: clamp(1.9rem, 7vw, 2.4rem);
+    font-size: clamp(1.85rem, 7.5vw, 2.3rem);
+    line-height: 1.15;
   }
   .hero-subtitle {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-bottom: 16px;
+  }
+  .hero-video-badge-bar {
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .hero-doctor-card {
+    max-width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 18px;
   }
   .hero-doctor-name {
-    font-size: 1.05rem;
+    font-size: 0.98rem;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
   }
-  .hero-doctor-img {
-    height: 320px;
+  .hero-doctor-role {
+    font-size: 0.78rem;
+    line-height: 1.35;
+    text-align: left;
   }
-  .hero-float-card {
-    padding: 8px 12px;
+  .hero-badges-wrapper {
+    justify-content: flex-start;
+    gap: 4px;
+    margin-top: 6px;
+  }
+  .hero-fellowship-pill {
+    font-size: 0.68rem;
+    padding: 3px 8px;
   }
   .hero-float-icon {
     width: 30px;
@@ -622,14 +669,27 @@
 
   /* --- Subpages --- */
   .subpage-hero {
-    padding-top: 90px;
+    padding-top: 88px;
     padding-bottom: 28px;
   }
   .subpage-hero-title {
-    font-size: clamp(1.45rem, 6vw, 2rem);
+    font-size: clamp(1.45rem, 6.2vw, 1.95rem);
+    line-height: 1.25;
+    margin-bottom: 10px;
   }
   .subpage-hero-sub {
-    font-size: 0.95rem;
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+  .breadcrumbs {
+    font-size: 0.78rem;
+    gap: 4px 6px;
+    margin-bottom: 12px;
+  }
+  .subpage-hero .section-badge {
+    font-size: 0.68rem;
+    padding: 3px 10px;
+    margin-bottom: 10px;
   }
   .subpage-container {
     padding-top: 32px;
@@ -704,6 +764,24 @@
   /* Conditions */
   .condition-card {
     padding: 20px 16px;
+  }
+
+  /* Subpage Hero (Ultra Small) */
+  .subpage-hero {
+    padding-top: 80px;
+    padding-bottom: 22px;
+  }
+  .subpage-hero-title {
+    font-size: 1.35rem;
+    line-height: 1.25;
+  }
+  .subpage-hero-sub {
+    font-size: 0.84rem;
+  }
+  .breadcrumbs {
+    font-size: 0.72rem;
+    gap: 4px;
+    margin-bottom: 10px;
   }
 
   /* Blog */

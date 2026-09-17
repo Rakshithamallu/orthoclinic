@@ -1,68 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { CLINIC_FACILITIES } from '../data/treatmentsData';
 
 const Facilities = () => {
-  const containerRef = useRef(null);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    const cards = container.querySelectorAll('.facility-card');
-    if (!cards.length) return;
-
-    if (!('IntersectionObserver' in window)) {
-      cards.forEach((c) => c.classList.add('in-view'));
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in-view');
-          } else {
-            // Re-arm on scroll away so cards animate again when scrolling up or down
-            entry.target.classList.remove('in-view');
-          }
-        });
-      },
-      {
-        threshold: 0.15,
-        rootMargin: '0px 0px -40px 0px',
-      }
-    );
-
-    cards.forEach((card) => observer.observe(card));
-
-    return () => {
-      cards.forEach((card) => observer.unobserve(card));
-    };
-  }, []);
-
-  const handleMouseMove = (e) => {
-    const card = e.currentTarget;
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-
-    const rotateX = ((y - centerY) / centerY) * -10;
-    const rotateY = ((x - centerX) / centerX) * 10;
-
-    card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-8px) scale3d(1.02, 1.02, 1.02)`;
-    card.style.setProperty('--glare-x', `${((x / rect.width) * 100).toFixed(1)}%`);
-    card.style.setProperty('--glare-y', `${((y / rect.height) * 100).toFixed(1)}%`);
-    card.style.setProperty('--glare-opacity', '1');
-  };
-
-  const handleMouseLeave = (e) => {
-    const card = e.currentTarget;
-    card.style.transform = '';
-    card.style.setProperty('--glare-opacity', '0');
-  };
-
   const getFacilityIcon = (iconType) => {
     switch (iconType) {
       case 'consultation':
@@ -126,16 +65,9 @@ const Facilities = () => {
           </p>
         </div>
 
-        <div className="facilities-grid" ref={containerRef}>
-          {CLINIC_FACILITIES.map((facility, index) => (
-            <div
-              key={facility.id}
-              className="facility-card"
-              style={{ '--card-index': index }}
-              onMouseMove={handleMouseMove}
-              onMouseLeave={handleMouseLeave}
-            >
-              <div className="facility-card-glare" />
+        <div className="facilities-grid">
+          {CLINIC_FACILITIES.map((facility) => (
+            <div key={facility.id} className="facility-card">
               <span className="facility-badge">{facility.badge}</span>
               <div className="facility-icon-wrap">
                 {getFacilityIcon(facility.icon)}
@@ -160,4 +92,3 @@ const Facilities = () => {
 };
 
 export default Facilities;
-
