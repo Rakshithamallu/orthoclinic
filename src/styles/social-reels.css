@@ -38,7 +38,81 @@
   line-height: 1.6;
 }
 
-/* ── 4-Column Reels Grid ── */
+/* ── Single Centered Reel Wrapper ── */
+.single-reel-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 38px;
+  max-width: 440px;
+  width: 100%;
+}
+
+.single-reel-card {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 20px;
+  box-shadow: 0 16px 48px rgba(11, 19, 32, 0.22), 0 0 28px rgba(15, 98, 254, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.single-reel-screen {
+  height: 380px;
+}
+
+.single-reel-play-btn {
+  width: 68px;
+  height: 68px;
+  margin-bottom: 16px;
+}
+
+.single-reel-title {
+  font-size: 1.12rem;
+  max-width: 290px;
+  margin-bottom: 8px;
+}
+
+.single-reel-tag {
+  font-size: 0.82rem;
+  margin-bottom: 14px;
+}
+
+.reel-live-player {
+  width: 100%;
+  height: 480px;
+  background: #000000;
+  overflow: hidden;
+}
+
+.reel-inline-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.btn-reel-watch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 26px;
+  border-radius: 9999px;
+  background: #0095f6;
+  color: #ffffff !important;
+  font-size: 0.96rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0, 149, 246, 0.35);
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.btn-reel-watch:hover {
+  background: #1877f2;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 28px rgba(0, 149, 246, 0.5);
+  color: #ffffff;
+}
+
+/* ── 4-Column Reels Grid (Fallback/Multi) ── */
 .reels-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
