@@ -18,12 +18,6 @@ const AboutDoctor = ({ onOpenAppointmentModal }) => {
                 className="about-img"
                 loading="lazy"
               />
-              <div className="about-badge-overlay">
-                <div className="about-badge-title">{DOCTOR_INFO.fullName}</div>
-                <div className="about-badge-sub">
-                  Consultant Orthopedic Surgeon • {CLINIC_INFO.address.city}, Karnataka
-                </div>
-              </div>
             </div>
           </div>
 

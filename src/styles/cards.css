@@ -4,26 +4,70 @@
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   1. CONDITIONS / AREAS OF EXPERTISE CARDS
+   1. CONDITIONS / AREAS OF EXPERTISE CARDS (Deep Blue Theme)
    -------------------------------------------------------------------------- */
 .conditions-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
+  perspective: 1400px;
 }
 
 .condition-card {
-  background-color: #ffffff;
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-lg);
-  padding: 28px 24px;
-  box-shadow: var(--shadow-sm);
+  background: linear-gradient(160deg, #102544 0%, #0c1c34 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.24);
+  border-bottom: 2.5px solid rgba(3, 10, 22, 0.6);
+  border-radius: 20px;
+  padding: 30px 24px;
+  box-shadow:
+    0 18px 40px -10px rgba(3, 10, 24, 0.6),
+    0 4px 14px rgba(0, 0, 0, 0.35),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15);
   display: flex;
   flex-direction: column;
-  transition: all var(--transition-normal);
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  transform-style: preserve-3d;
+  will-change: transform, box-shadow;
+  transition:
+    transform 0.16s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+/* 3D Dynamic Specular Light Glare */
+.condition-card-glare {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at var(--glare-x, 50%) var(--glare-y, 50%),
+    rgba(255, 255, 255, 0.18) 0%,
+    rgba(56, 189, 248, 0.08) 35%,
+    transparent 65%
+  );
+  opacity: var(--glare-opacity, 0);
+  transition: opacity 0.3s ease;
+  z-index: 5;
+  mix-blend-mode: overlay;
+}
+
+/* Subtle top rim glow */
+.condition-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, #00d2b4 50%, transparent 100%);
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+  z-index: 2;
 }
 
 .condition-card::after {
@@ -33,77 +77,130 @@
   left: 0;
   right: 0;
   height: 3px;
-  background-color: var(--primary);
+  background: linear-gradient(90deg, #0f62fe, #00d2b4);
   transform: scaleX(0);
-  transform-origin: left;
-  transition: transform var(--transition-normal);
+  transform-origin: center;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 2;
 }
 
 .condition-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-hover);
-  border-color: rgba(15, 98, 254, 0.25);
+  background: linear-gradient(160deg, #142e54 0%, #0e203c 100%);
+  border-color: rgba(56, 189, 248, 0.55);
+  border-top-color: rgba(255, 255, 255, 0.35);
+  box-shadow:
+    0 32px 70px -15px rgba(2, 8, 20, 0.8),
+    0 0 35px rgba(15, 98, 254, 0.3),
+    inset 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+.condition-card:hover::before {
+  opacity: 1;
 }
 
 .condition-card:hover::after {
   transform: scaleX(1);
 }
 
+/* Cyan/Teal icon inside glowing dark-teal rounded square with 3D elevation */
 .condition-icon-box {
-  width: 52px;
-  height: 52px;
-  border-radius: var(--radius-md);
-  background-color: var(--primary-light);
-  color: var(--primary);
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: rgba(0, 210, 180, 0.12);
+  border: 1px solid rgba(0, 210, 180, 0.28);
+  color: #00d2b4;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
-  transition: all var(--transition-normal);
+  margin-bottom: 22px;
+  box-shadow: 0 6px 16px rgba(0, 210, 180, 0.16);
+  transform: translateZ(28px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.3s,
+              border-color 0.3s,
+              box-shadow 0.3s;
 }
 
 .condition-card:hover .condition-icon-box {
-  background-color: var(--primary);
+  background: rgba(0, 210, 180, 0.26);
+  border-color: #00d2b4;
   color: #ffffff;
-  transform: scale(1.05);
+  transform: translateZ(38px) scale(1.08);
+  box-shadow: 0 12px 28px rgba(0, 210, 180, 0.38);
 }
 
+/* Bright crisp white title with 3D elevation */
 .condition-title {
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--text-primary);
+  color: #ffffff;
   margin-bottom: 6px;
+  letter-spacing: -0.01em;
+  transform: translateZ(24px);
+  transition: transform 0.3s ease, color 0.2s ease;
 }
 
+.condition-card:hover .condition-title {
+  transform: translateZ(30px);
+}
+
+/* Vibrant medical cyan/teal tagline with 3D elevation */
 .condition-tagline {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  color: var(--accent-teal);
-  margin-bottom: 12px;
+  color: #00d2b4;
+  margin-bottom: 14px;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
+  transform: translateZ(20px);
+  transition: transform 0.3s ease;
 }
 
+.condition-card:hover .condition-tagline {
+  transform: translateZ(26px);
+}
+
+/* Soft light-slate readable description with 3D elevation */
 .condition-description {
   font-size: 0.925rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 20px;
+  color: #94a3b8;
+  line-height: 1.65;
+  margin-bottom: 22px;
   flex-grow: 1;
+  transform: translateZ(16px);
+  transition: transform 0.3s ease;
 }
 
+.condition-card:hover .condition-description {
+  transform: translateZ(22px);
+}
+
+/* Glowing Learn More button with 3D elevation */
 .condition-learn-btn {
-  font-size: 0.875rem;
+  font-size: 0.88rem;
   font-weight: 700;
-  color: var(--primary);
+  color: #38bdf8;
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  transition: gap var(--transition-fast);
+  text-decoration: none;
+  transform: translateZ(26px);
+  transition: transform 0.3s ease, color var(--transition-fast), gap var(--transition-fast);
+}
+
+.condition-learn-btn svg {
+  transition: transform var(--transition-fast);
 }
 
 .condition-card:hover .condition-learn-btn {
+  transform: translateZ(32px);
+  color: #00d2b4;
   gap: 10px;
+}
+
+.condition-card:hover .condition-learn-btn svg {
+  transform: translateX(3px);
 }
 
 /* --------------------------------------------------------------------------
@@ -294,12 +391,13 @@
 }
 
 /* --------------------------------------------------------------------------
-   3. CLINIC FACILITIES CARDS
+   3. CLINIC FACILITIES CARDS (3D Animated with Directional Scroll-In)
    -------------------------------------------------------------------------- */
 .facilities-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
+  perspective: 1200px;
 }
 
 .facilities-grid .facility-card:nth-child(4),
@@ -315,11 +413,58 @@
   box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
-  transition: all var(--transition-normal);
   position: relative;
   overflow: hidden;
+  transform-style: preserve-3d;
+  will-change: transform, opacity, filter, box-shadow;
+  
+  /* Initial scroll-away state */
+  opacity: 0;
+  filter: blur(4px);
+  pointer-events: none;
+  transition:
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s ease,
+    border-color 0.3s ease;
+  transition-delay: calc(var(--card-index, 0) * 0.08s);
 }
 
+/* Directional Entrance:
+   Left cards (1st, 4th) enter from left
+   Center card (2nd) enters from bottom
+   Right cards (3rd, 5th) enter from right */
+.facilities-grid .facility-card:nth-child(3n + 1) {
+  transform: translateX(-70px) translateY(30px) rotateY(-8deg) scale(0.94);
+}
+
+.facilities-grid .facility-card:nth-child(3n + 2) {
+  transform: translateY(60px) scale(0.92);
+}
+
+.facilities-grid .facility-card:nth-child(3n + 3) {
+  transform: translateX(70px) translateY(30px) rotateY(8deg) scale(0.94);
+}
+
+/* Specific 4th and 5th card directional offsets */
+.facilities-grid .facility-card:nth-child(4) {
+  transform: translateX(-60px) translateY(30px) rotateY(-7deg) scale(0.94);
+}
+
+.facilities-grid .facility-card:nth-child(5) {
+  transform: translateX(60px) translateY(30px) rotateY(7deg) scale(0.94);
+}
+
+/* In-View State: smoothly slides into place when scrolled into view */
+.facility-card.in-view {
+  opacity: 1;
+  transform: translateX(0) translateY(0) rotateX(0deg) rotateY(0deg) scale(1);
+  filter: blur(0);
+  pointer-events: auto;
+}
+
+/* Top Accent line */
 .facility-card::before {
   content: '';
   position: absolute;
@@ -327,21 +472,41 @@
   left: 0;
   right: 0;
   height: 4px;
-  background-color: var(--accent-teal);
-  opacity: 0;
-  transition: opacity var(--transition-fast);
-}
-
-.facility-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-hover);
-  border-color: rgba(0, 163, 137, 0.3);
+  background: linear-gradient(90deg, #0f62fe, var(--accent-teal));
+  opacity: 0.25;
+  transition: opacity var(--transition-fast), height var(--transition-fast);
+  z-index: 2;
 }
 
 .facility-card:hover::before {
   opacity: 1;
+  height: 5px;
 }
 
+/* 3D Dynamic Specular Light Glare */
+.facility-card-glare {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at var(--glare-x, 50%) var(--glare-y, 50%),
+    rgba(15, 98, 254, 0.12) 0%,
+    rgba(0, 210, 180, 0.08) 35%,
+    transparent 65%
+  );
+  opacity: var(--glare-opacity, 0);
+  transition: opacity 0.3s ease;
+  z-index: 5;
+  mix-blend-mode: multiply;
+}
+
+.facility-card.in-view:hover {
+  box-shadow: 0 24px 48px -12px rgba(15, 98, 254, 0.18), 0 8px 24px rgba(0, 0, 0, 0.06);
+  border-color: rgba(15, 98, 254, 0.35);
+}
+
+/* 3D Depth on inner elements */
 .facility-badge {
   align-self: flex-start;
   font-size: 0.75rem;
@@ -353,11 +518,13 @@
   padding: 4px 12px;
   border-radius: var(--radius-pill);
   margin-bottom: 16px;
+  transform: translateZ(22px);
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .facility-icon-wrap {
-  width: 54px;
-  height: 54px;
+  width: 56px;
+  height: 56px;
   border-radius: var(--radius-md);
   background-color: var(--bg-subtle);
   color: var(--primary);
@@ -365,12 +532,15 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 18px;
+  transform: translateZ(30px);
   transition: all var(--transition-normal);
 }
 
 .facility-card:hover .facility-icon-wrap {
   background-color: var(--primary);
   color: #ffffff;
+  transform: translateZ(38px) scale(1.06);
+  box-shadow: 0 8px 20px rgba(15, 98, 254, 0.25);
 }
 
 .facility-title {
@@ -378,6 +548,12 @@
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 12px;
+  transform: translateZ(24px);
+  transition: transform 0.3s ease, color 0.2s ease;
+}
+
+.facility-card:hover .facility-title {
+  color: var(--primary);
 }
 
 .facility-desc {
@@ -386,6 +562,8 @@
   line-height: 1.6;
   margin-bottom: 20px;
   flex-grow: 1;
+  transform: translateZ(16px);
+  transition: transform 0.3s ease;
 }
 
 .facility-features {
@@ -394,6 +572,8 @@
   gap: 8px;
   padding-top: 16px;
   border-top: 1px solid var(--border-light);
+  transform: translateZ(18px);
+  transition: transform 0.3s ease;
 }
 
 .facility-feature-item {
@@ -406,10 +586,11 @@
 }
 
 .facility-check-dot {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  background-color: var(--accent-teal);
+  background: linear-gradient(135deg, var(--accent-teal), #0f62fe);
+  box-shadow: 0 0 6px rgba(0, 210, 180, 0.4);
 }
 
 /* --------------------------------------------------------------------------

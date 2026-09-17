@@ -2,6 +2,8 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { TREATMENT_CATEGORIES } from '../data/treatmentsData';
 import { CLINIC_INFO } from '../data/doctorData';
+import TreatmentAnatomyImage from '../components/TreatmentAnatomyImage';
+import '../styles/anatomy-image.css';
 
 const TreatmentDetailPage = ({ onOpenAppointmentModal }) => {
   const { categoryId } = useParams();
@@ -43,33 +45,12 @@ const TreatmentDetailPage = ({ onOpenAppointmentModal }) => {
               Back to All Treatments
             </Link>
 
-            {/* Hero Overview Box */}
-            <div className="treatment-detail-hero-box">
-              <div>
-                <span className="section-badge">{category.shortTitle}</span>
-                <h2 style={{ fontSize: '1.75rem', fontWeight: '800', margin: '12px 0', color: 'var(--text-primary)' }}>
-                  Clinical Overview & Philosophy
-                </h2>
-                <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', lineHeight: '1.7' }}>
-                  {category.summary}
-                </p>
-                <div style={{ marginTop: '20px' }}>
-                  <button
-                    className="btn btn-primary"
-                    onClick={onOpenAppointmentModal}
-                  >
-                    Consult for {category.shortTitle}
-                  </button>
-                </div>
-              </div>
-              <div>
-                <img
-                  src={category.image}
-                  alt={category.name}
-                  style={{ width: '100%', height: '240px', objectFit: 'cover', borderRadius: 'var(--radius-md)' }}
-                />
-              </div>
+            {/* Hero Overview Box — full-width landscape anatomy image */}
+            <div className="treatment-detail-hero-box treatment-hero-landscape">
+              {/* ── Interactive Anatomy Image (landscape, full width) ── */}
+              <TreatmentAnatomyImage category={category} />
             </div>
+
 
             {/* Procedures Detailed List */}
             <div style={{ marginBottom: '24px' }}>

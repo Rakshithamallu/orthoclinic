@@ -68,6 +68,29 @@ const Conditions = ({ onOpenAppointmentModal }) => {
     }
   };
 
+  const handleMouseMove = (e) => {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = ((y - centerY) / centerY) * -11;
+    const rotateY = ((x - centerX) / centerX) * 11;
+
+    card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-8px) scale3d(1.025, 1.025, 1.025)`;
+    card.style.setProperty('--glare-x', `${((x / rect.width) * 100).toFixed(1)}%`);
+    card.style.setProperty('--glare-y', `${((y / rect.height) * 100).toFixed(1)}%`);
+    card.style.setProperty('--glare-opacity', '1');
+  };
+
+  const handleMouseLeave = (e) => {
+    const card = e.currentTarget;
+    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0) scale3d(1, 1, 1)';
+    card.style.setProperty('--glare-opacity', '0');
+  };
+
   return (
     <section className="section section-subtle" id="conditions">
       <div className="container">
@@ -85,12 +108,14 @@ const Conditions = ({ onOpenAppointmentModal }) => {
               key={cond.id}
               className="condition-card"
               onClick={() => navigate(`/conditions/${cond.id}`)}
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
               role="button"
               tabIndex={0}
               onKeyDown={(e) => e.key === 'Enter' && navigate(`/conditions/${cond.id}`)}
               aria-label={`View clinical details for ${cond.title}`}
-              style={{ cursor: 'pointer' }}
             >
+              <div className="condition-card-glare" />
               <div className="condition-icon-box">
                 {getConditionIcon(cond.icon)}
               </div>

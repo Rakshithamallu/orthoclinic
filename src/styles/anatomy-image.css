@@ -1,0 +1,374 @@
+/* ============================================================
+   TreatmentAnatomyImage — interactive clickable anatomy image
+   ============================================================ */
+
+/* Wrapper: relative so hotspot dots can be absolutely placed */
+.tai-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-lg, 16px);
+  overflow: hidden;
+  cursor: crosshair;
+  box-shadow: 0 24px 60px rgba(15, 98, 254, 0.18);
+  background: #0a0f1e;
+}
+
+/* Landscape: full-width, shorter height for a wide cinematic look */
+.tai-image {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  object-position: center 50%;
+  display: block;
+  transition: transform 0.6s ease;
+  filter: brightness(0.85) saturate(1.1);
+}
+
+.tai-wrapper:hover .tai-image {
+  transform: scale(1.02);
+}
+
+/* Subtle dark vignette to help labels pop */
+.tai-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.08) 0%,
+      rgba(0, 0, 0, 0.04) 60%,
+      rgba(0, 0, 0, 0.45) 100%);
+  pointer-events: none;
+}
+
+/* ── Hotspot dot ── */
+.tai-dot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+.tai-dot:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+/* Pulse rings */
+.tai-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  animation: taiPulse 2s ease-out infinite;
+  pointer-events: none;
+}
+
+.tai-ring-2 {
+  animation-delay: 0.6s;
+}
+
+@keyframes taiPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+
+  70% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* Active dot — pulse stops, glows */
+.tai-dot--active .tai-ring {
+  animation: none;
+  border-color: #0f62fe;
+  opacity: 1;
+  transform: scale(1.5);
+  transition: all 0.25s ease;
+}
+
+/* Inner solid dot */
+.tai-core {
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4), 0 0 12px rgba(255, 255, 255, 0.6);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.tai-dot--active .tai-core {
+  background: #0f62fe;
+  transform: scale(1.2);
+  box-shadow: 0 0 0 3px rgba(15, 98, 254, 0.35), 0 0 16px rgba(15, 98, 254, 0.5);
+}
+
+.tai-dot:hover .tai-core {
+  transform: scale(1.3);
+}
+
+/* ── Floating label popup ── */
+.tai-label {
+  position: absolute;
+  bottom: calc(100% + 14px);  /* default: above the dot */
+  left: 50%;
+  transform: translateX(-50%) translateY(8px) scale(0.85);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
+    transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+  white-space: nowrap;
+  z-index: 20;
+}
+
+.tai-label--visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+/* Label BELOW the dot (for hotspots near the top of the image) */
+.tai-label--below {
+  bottom: auto;
+  top: calc(100% + 14px);
+  transform: translateX(-50%) translateY(-8px) scale(0.85);
+}
+.tai-label--below.tai-label--visible {
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+/* Shift label right when dot is at left edge (x < 20%) */
+.tai-label--align-left {
+  left: 0;
+  transform: translateX(0) translateY(8px) scale(0.85);
+}
+.tai-label--align-left.tai-label--visible {
+  transform: translateX(0) translateY(0) scale(1);
+}
+.tai-label--align-left.tai-label--below {
+  transform: translateX(0) translateY(-8px) scale(0.85);
+}
+.tai-label--align-left.tai-label--below.tai-label--visible {
+  transform: translateX(0) translateY(0) scale(1);
+}
+
+/* Shift label left when dot is at right edge (x > 80%) */
+.tai-label--align-right {
+  left: auto;
+  right: 0;
+  transform: translateX(0) translateY(8px) scale(0.85);
+}
+.tai-label--align-right.tai-label--visible {
+  transform: translateX(0) translateY(0) scale(1);
+}
+.tai-label--align-right.tai-label--below {
+  transform: translateX(0) translateY(-8px) scale(0.85);
+}
+.tai-label--align-right.tai-label--below.tai-label--visible {
+  transform: translateX(0) translateY(0) scale(1);
+}
+
+/* Upward arrow (for below-labels, arrow points UP toward the dot) */
+.tai-label-arrow--top {
+  display: block;
+  width: 0;
+  height: 0;
+  margin: 0 auto;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid var(--dot-color, #0f62fe);
+  border-top: none;
+}
+
+
+/* Label card body */
+.tai-label-name {
+  display: block;
+  background: #0f62fe;
+  color: #fff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 6px 14px 4px;
+  border-radius: 8px 8px 0 0;
+  text-align: center;
+}
+
+.tai-label-sub {
+  display: block;
+  background: #fff;
+  color: #0f172a;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.73rem;
+  font-weight: 500;
+  padding: 4px 14px 6px;
+  border-radius: 0 0 8px 8px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(15, 98, 254, 0.25);
+}
+
+/* Downward pointing arrow */
+.tai-label-arrow {
+  display: block;
+  width: 0;
+  height: 0;
+  margin: 0 auto;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid #fff;
+}
+
+/* ── Bottom legend ── */
+.tai-legend {
+  position: absolute;
+  bottom: 14px;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.78rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 500;
+  pointer-events: none;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  animation: taiFadeIn 0.4s ease;
+}
+
+@keyframes taiFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tai-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 60%;
+  background: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  flex-shrink: 0;
+  animation: taiPulse 2s ease-out infinite;
+}
+
+/* ── Active info banner (slides up from bottom when a dot is clicked) ── */
+.tai-active-banner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #fff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.9rem;
+  animation: taiBannerIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border-top: 2px solid var(--dot-color, #0f62fe);
+}
+
+@keyframes taiBannerIn {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.tai-active-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--dot-color, #0f62fe);
+  box-shadow: 0 0 10px var(--dot-color, #0f62fe);
+  flex-shrink: 0;
+}
+
+.tai-active-banner strong {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--dot-color, #0f62fe);
+}
+
+.tai-active-sep {
+  opacity: 0.5;
+}
+
+.tai-active-close {
+  margin-left: auto;
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  color: #fff;
+  font-size: 0.8rem;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.tai-active-close:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Core dot with per-dot color */
+.tai-core {
+  background: var(--dot-color, #fff) !important;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4),
+    0 0 14px var(--dot-color, rgba(255, 255, 255, 0.6)) !important;
+}
+
+.tai-dot--active .tai-core {
+  transform: scale(1.3) !important;
+}
+
+/* ── Landscape hero box override ── */
+.treatment-hero-landscape {
+  padding: 0 !important;
+  border-radius: var(--radius-lg, 16px);
+  overflow: hidden;
+  border: none !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .tai-image {
+    height: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tai-image {
+    height: 190px;
+  }
+}

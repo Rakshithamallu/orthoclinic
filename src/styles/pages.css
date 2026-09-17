@@ -323,6 +323,22 @@
   align-items: center;
 }
 
+/* Landscape override: single column, image fills full width, no padding */
+.treatment-detail-hero-box.treatment-hero-landscape {
+  display: block;
+  padding: 0;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+}
+.treatment-hero-landscape .tai-wrapper {
+  border-radius: var(--radius-xl);
+  box-shadow: none;
+}
+.treatment-hero-landscape .tai-image {
+  height: 420px;
+  width: 100%;
+}
+
 .treatment-procedures-full-list {
   display: flex;
   flex-direction: column;

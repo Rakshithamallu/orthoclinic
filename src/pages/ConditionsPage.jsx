@@ -3,6 +3,29 @@ import { Link } from 'react-router-dom';
 import { CONDITIONS } from '../data/treatmentsData';
 
 const ConditionsPage = ({ onOpenAppointmentModal }) => {
+  const handleMouseMove = (e) => {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = ((y - centerY) / centerY) * -9;
+    const rotateY = ((x - centerX) / centerX) * 9;
+
+    card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-8px) scale3d(1.02, 1.02, 1.02)`;
+    card.style.setProperty('--glare-x', `${((x / rect.width) * 100).toFixed(1)}%`);
+    card.style.setProperty('--glare-y', `${((y / rect.height) * 100).toFixed(1)}%`);
+    card.style.setProperty('--glare-opacity', '1');
+  };
+
+  const handleMouseLeave = (e) => {
+    const card = e.currentTarget;
+    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0) scale3d(1, 1, 1)';
+    card.style.setProperty('--glare-opacity', '0');
+  };
+
   return (
     <div className="conditions-page">
       {/* Subpage Hero */}
@@ -25,21 +48,24 @@ const ConditionsPage = ({ onOpenAppointmentModal }) => {
       {/* Conditions Grid */}
       <section className="section">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '28px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '28px', perspective: '1200px' }}>
             {CONDITIONS.map((cond) => (
               <div
                 key={cond.id}
                 className="condition-card"
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
                 style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
               >
+                <div className="condition-card-glare" />
                 <div>
                   <span className="section-badge teal" style={{ marginBottom: '12px' }}>{cond.tagline}</span>
                   <h2 className="condition-title" style={{ fontSize: '1.35rem' }}>{cond.title}</h2>
                   <p className="condition-description" style={{ marginBottom: '16px' }}>{cond.description}</p>
                   
-                  <div style={{ backgroundColor: 'var(--bg-subtle)', padding: '12px', borderRadius: '8px', marginBottom: '16px' }}>
-                    <strong style={{ fontSize: '0.85rem', color: 'var(--text-primary)' }}>Key Symptoms:</strong>
-                    <ul style={{ listStyle: 'disc', paddingLeft: '18px', marginTop: '6px', fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
+                  <div style={{ backgroundColor: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.08)', padding: '12px', borderRadius: '10px', marginBottom: '16px' }}>
+                    <strong style={{ fontSize: '0.85rem', color: '#e2e8f0' }}>Key Symptoms:</strong>
+                    <ul style={{ listStyle: 'disc', paddingLeft: '18px', marginTop: '6px', fontSize: '0.85rem', color: '#94a3b8' }}>
                       {cond.symptoms.slice(0, 3).map((sym, idx) => (
                         <li key={idx}>{sym}</li>
                       ))}
