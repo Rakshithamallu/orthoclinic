@@ -11,7 +11,7 @@
     "dev": "concurrently --kill-others \"node server/server.js\" \"webpack serve --mode development\"",
     "test": "node test_client_server.js",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build --nojekyll"
   },
   "keywords": [
     "orthopedic",
