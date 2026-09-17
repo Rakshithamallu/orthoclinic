@@ -12,6 +12,7 @@ import './styles/blog.css';
 import './styles/pages.css';
 import './styles/loading-screen.css';
 import './styles/animations.css';
+import './styles/social-reels.css';
 import './styles/responsive.css';
 
 // Components

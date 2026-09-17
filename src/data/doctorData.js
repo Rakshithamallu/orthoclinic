@@ -23,6 +23,9 @@ export const CLINIC_INFO = {
     mapsUrl: "https://www.google.com/maps/search/?api=1&query=19+10th+cross+Opp+MORE+Supermarket+C-Block+JP+Nagar+Mysuru+Karnataka+570008",
   },
   whatsappUrl: "https://wa.me/916361446411?text=Hello%20Dr.%20Shashi%27s%20Ortho%20Clinic,%20I%20would%20like%20to%20consult%20regarding%20an%20orthopedic%20appointment.",
+  instagramUrl: "https://www.instagram.com/dr.shashi_ortho_clinic?stkn=MTYwMGR1djNtcmxreQ==",
+  instagramReelUrl: "https://www.instagram.com/reel/Dc3az8UzHOo/?stkn=MXQxYmFleTQ3c3J6Yg==",
+  instagramHandle: "dr.shashi_ortho_clinic",
   appointmentBookingUrl: "#appointment-section", // configurable booking target
 };
 
