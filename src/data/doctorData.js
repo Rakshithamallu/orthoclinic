@@ -162,3 +162,204 @@ export const DOCTOR_INFO = {
   },
   disclaimer: "Information provided on this website is for general informational and educational purposes only and does not substitute for professional clinical consultation, diagnosis, or personalized medical care.",
 };
+
+/**
+ * Surgical Track Record & Clinical Statistics
+ * Backed by high-volume clinical and surgical practice
+ */
+export const SURGICAL_TRACK_RECORD = [
+  {
+    id: "total-surgeries",
+    stat: "5,000+",
+    value: 5000,
+    suffix: "+",
+    label: "Total Orthopedic Surgeries Performed with a 99%+ Positive Surgical Outcome Rate",
+    category: "Overall Excellence",
+    isPrimary: true,
+    icon: "total-surgeries",
+  },
+  {
+    id: "experience",
+    stat: "15+",
+    value: 15,
+    suffix: "+",
+    label: "Years of Active Surgical and Clinical Experience",
+    category: "Senior Consultant",
+    icon: "experience",
+  },
+  {
+    id: "happy-patients",
+    stat: "20,000+",
+    value: 20000,
+    suffix: "+",
+    label: "Happy Patients Successfully Treated across Mysuru & Karnataka",
+    category: "Patient Satisfaction",
+    icon: "happy-patients",
+  },
+  {
+    id: "knee-arthroscopy",
+    stat: "2,000+",
+    value: 2000,
+    suffix: "+",
+    label: "Knee Arthroscopy Surgeries (Keyhole Ligament & Meniscus Repairs)",
+    category: "Knee Surgery",
+    icon: "knee-bone",
+  },
+  {
+    id: "joint-replacements",
+    stat: "1,500+",
+    value: 1500,
+    suffix: "+",
+    label: "Total & Partial Joint Replacement Surgeries (Knee, Hip, Shoulder)",
+    category: "Arthroplasty",
+    icon: "knee-pain",
+  },
+  {
+    id: "shoulder-arthroscopy",
+    stat: "1,000+",
+    value: 1000,
+    suffix: "+",
+    label: "Advanced Shoulder Arthroscopy Surgeries (Rotator Cuff & Bankart)",
+    category: "Shoulder Care",
+    icon: "shoulder",
+  },
+  {
+    id: "trauma-surgeries",
+    stat: "500+",
+    value: 500,
+    suffix: "+",
+    label: "Complex Orthopedic Trauma & High-Velocity Fracture Fixations",
+    category: "Trauma Care",
+    icon: "trauma",
+  },
+  {
+    id: "robotic-replacements",
+    stat: "100+",
+    value: 100,
+    suffix: "+",
+    label: "Robotic-Assisted Knee Replacement Surgeries with Sub-Millimeter Accuracy",
+    category: "Robotic Technology",
+    icon: "robotic",
+  },
+];
+
+/**
+ * 6-Pillar Patient Assurance & Clinical Benefits
+ */
+export const TRUST_BENEFITS = [
+  {
+    id: "fellowship",
+    icon: "fellowship",
+    title: "Fellowship-Trained Arthroscopy Specialist",
+    description: "Dedicated advanced fellowship training in keyhole arthroscopy and sports medicine beyond standard general orthopedics.",
+    accentColor: "#028090",
+  },
+  {
+    id: "robotic",
+    icon: "robotic",
+    title: "Robotic-Assisted Knee Replacement",
+    description: "State-of-the-art robotic planning supports sub-millimeter implant alignment, minimal bone resection, less pain, and faster recovery.",
+    accentColor: "#eb6a56",
+  },
+  {
+    id: "minimally-invasive",
+    icon: "keyhole",
+    title: "Minimally Invasive First Approach",
+    description: "Smaller keyhole incisions aim to significantly reduce soft-tissue trauma, minimize infection risk, and accelerate return to daily routine.",
+    accentColor: "#00a896",
+  },
+  {
+    id: "hospital-access",
+    icon: "hospital",
+    title: "Tertiary Hospital Infrastructure & ICU",
+    description: "Major surgical procedures performed in accredited tertiary hospitals with advanced laminar air-flow operating suites and 24/7 ICU backup.",
+    accentColor: "#17314c",
+  },
+  {
+    id: "biologics",
+    icon: "biologics",
+    title: "Orthopedic Biologics & PRP Therapy",
+    description: "Autologous Platelet-Rich Plasma (PRP) and cellular joint preservation therapies for patients who want to avoid or delay surgery.",
+    accentColor: "#02c39a",
+  },
+  {
+    id: "regional-leader",
+    icon: "location",
+    title: "Serving Mysuru & Across Karnataka",
+    description: "Easily accessible clinic in JP Nagar, Mysuru, welcoming patients from across Karnataka with comprehensive multilingual consultations.",
+    accentColor: "#0c99c1",
+  },
+];
+
+/**
+ * Verified Patient Testimonials & Google Reviews
+ */
+export const VERIFIED_GOOGLE_REVIEWS = [
+  {
+    id: "rev-1",
+    author: "Charan Kattemane",
+    initials: "CK",
+    source: "Google Review",
+    rating: 5,
+    date: "Recent Patient",
+    treatment: "Right Arthroscopic Meniscal Repair with PRP",
+    snippet: "Honest opinion and conservative approach helped avoid unnecessary knee replacement surgery.",
+    fullReview: "Warm greetings and positive recovery update. I would like to express our sincere gratitude for your expert guidance provided to my father (70 years). Today he is walking properly, driving a car, and has resumed his routine activities comfortably. Initially we had consulted another hospital where knee replacement was advised immediately. However, upon careful evaluation Dr. Shashi suggested and performed Right Arthroscopic Medial Meniscal Repair with Intra-Articular PRP Infiltration, which proved to be the most appropriate treatment. Honest opinion, precise diagnosis, and conservative approach helped avoid unnecessary major surgery.",
+  },
+  {
+    id: "rev-2",
+    author: "Pragati Chaudhary",
+    initials: "PC",
+    source: "Google Review",
+    rating: 5,
+    date: "Recent Patient",
+    treatment: "Bilateral Robotic Total Knee Replacement (TKR)",
+    snippet: "Deformity completely corrected; straight and healthy legs with painless walking.",
+    fullReview: "I had been suffering with severe osteoarthritis in both knees for nearly a decade and finally decided to undergo bilateral robotic total knee replacement. Thanks to Dr. Shashi's remarkable expertise in robotic TKR and his precision in managing complex joint cases, the severe bow-leg deformity has been completely corrected. These days I often receive compliments on how healthy and straight my legs look, and I am walking completely pain-free.",
+  },
+  {
+    id: "rev-3",
+    author: "Bhane Singh",
+    initials: "BS",
+    source: "Google Review",
+    rating: 5,
+    date: "Recent Patient",
+    treatment: "Knee PCL & Ligament Reconstruction",
+    snippet: "Incredibly skilled and compassionate surgical execution with outstanding recovery.",
+    fullReview: "Three months ago, I had the privilege of having my knee PCL ligament reconstruction performed by Dr. Shashikumar, and it was truly an exceptional experience. The doctor is incredibly skilled, attentive, and compassionate. His clinical team provided immense support through every phase of post-operative physiotherapy. I am back on my feet with full knee stability.",
+  },
+  {
+    id: "rev-4",
+    author: "Shaik Siddik",
+    initials: "SS",
+    source: "Google Review",
+    rating: 5,
+    date: "Recent Patient",
+    treatment: "Complex Tibia & Fibula Fracture Fixation",
+    snippet: "Guiding with great patience, clarity, and extraordinary trauma surgery skill.",
+    fullReview: "I am truly grateful for the exceptional care I received after a severe tibia and fibula fracture from a vehicular accident. From the very first consultation, the doctor explained every detail of my treatment options. The surgery was performed with remarkable skill using titanium locking plates, and my bone union and recovery was surprisingly smooth. The personal encouragement made all the difference.",
+  },
+  {
+    id: "rev-5",
+    author: "Shanawaz Khan",
+    initials: "SK",
+    source: "Google Review",
+    rating: 5,
+    date: "Recent Patient",
+    treatment: "Robotic Partial Knee Replacement",
+    snippet: "Walking comfortably within days without needing a walker.",
+    fullReview: "My grandfather underwent robotic partial knee replacement surgery. The operation went exceptionally well, and he was able to walk properly within days without needing a walker. Partial knee surgery is tricky, but Dr. Shashi performed it with absolute perfection. He and his team patiently addressed all concerns and supported us through rehabilitation.",
+  },
+  {
+    id: "rev-6",
+    author: "Suzana Princy",
+    initials: "SP",
+    source: "Google Review",
+    rating: 5,
+    date: "Recent Patient",
+    treatment: "Shoulder Arthroscopy & Rotator Cuff Repair",
+    snippet: "Walked us through the whole procedure with regular post-op follow ups.",
+    fullReview: "The doctor was extremely helpful during my brother's shoulder arthroscopy. He made sure to walk our family through the procedure and gave regular updates. Even after discharge, he personally followed up to monitor pain relief and exercise adherence. Truly an exceptional orthopedic surgeon whom I strongly recommend.",
+  },
+];
+

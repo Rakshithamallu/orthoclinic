@@ -3,10 +3,17 @@ import { useParams, Link } from 'react-router-dom';
 import { TREATMENT_CATEGORIES } from '../data/treatmentsData';
 import { CLINIC_INFO } from '../data/doctorData';
 import TreatmentAnatomyImage from '../components/TreatmentAnatomyImage';
+import SpecialtyDetailPage from './SpecialtyDetailPage';
 import '../styles/anatomy-image.css';
+
+const ENHANCED_SPECIALTIES = ['knee', 'hip', 'joint-replacement', 'shoulder', 'sports-trauma', 'trauma-fracture', 'elbow-trauma'];
 
 const TreatmentDetailPage = ({ onOpenAppointmentModal }) => {
   const { categoryId } = useParams();
+
+  if (ENHANCED_SPECIALTIES.includes(categoryId?.toLowerCase())) {
+    return <SpecialtyDetailPage onOpenAppointmentModal={onOpenAppointmentModal} />;
+  }
 
   const category = TREATMENT_CATEGORIES.find((cat) => cat.id === categoryId) || TREATMENT_CATEGORIES[0];
   const otherCategories = TREATMENT_CATEGORIES.filter((cat) => cat.id !== category.id);

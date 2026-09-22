@@ -68,8 +68,10 @@ module.exports = (env, argv) => {
     devServer: {
       port: 3000,
       historyApiFallback: {
-        index: '/',
-        disableDotRule: true,
+        index: '/index.html',
+        rewrites: [
+          { from: /^\/.*$/, to: '/index.html' },
+        ],
       },
       hot: true,
       open: false,

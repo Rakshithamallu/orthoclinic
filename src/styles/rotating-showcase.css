@@ -1,0 +1,992 @@
+/* ==========================================================================
+   ROTATING CLOCKWISE ANATOMY SHOWCASE & MODAL
+   Dr. Shashi's Ortho Clinic
+   ========================================================================== */
+
+.rotating-showcase-section {
+  width: 100%;
+  margin: 36px 0 44px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  user-select: none;
+}
+
+.rotating-showcase-caption {
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #0f62fe;
+  background: rgba(15, 98, 254, 0.08);
+  border: 1px solid rgba(15, 98, 254, 0.2);
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.showcase-beacon {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00a389;
+  box-shadow: 0 0 10px #00a389;
+  animation: beacon-pulse 1.8s infinite;
+}
+
+@keyframes beacon-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.6;
+  }
+}
+
+/* Orbit Arena */
+.orbit-stage {
+  position: relative;
+  width: 380px;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/* Decorative Background Circular Grid */
+.orbit-halo-bg {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(15, 98, 254, 0.05) 0%, rgba(0, 163, 137, 0.03) 60%, transparent 80%);
+  pointer-events: none;
+}
+
+.orbit-halo-ring {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(15, 98, 254, 0.22);
+  pointer-events: none;
+}
+
+/* Clockwise Orbit Track */
+.orbit-track {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  animation: rotateClockwise 22s linear infinite;
+  transform-origin: center center;
+}
+
+/* Pause on hover so the user can easily click any image */
+.orbit-stage:hover .orbit-track,
+.orbit-stage:hover .orbit-item-content {
+  animation-play-state: paused;
+}
+
+@keyframes rotateClockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Individual Orbit Nodes (Top, Right, Bottom, Left) */
+.orbit-pod {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orbit-pod.pod-top {
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.orbit-pod.pod-right {
+  top: 50%;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+.orbit-pod.pod-bottom {
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.orbit-pod.pod-left {
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+/* Counter-rotation to keep the image & label upright */
+.orbit-item-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: counterRotate 22s linear infinite;
+  transform-origin: center center;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  outline: none;
+}
+
+@keyframes counterRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+/* The Animated Image Thumbnail Circle */
+.orbit-thumb-wrapper {
+  position: relative;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(135deg, #0f62fe 0%, #00a389 100%);
+  box-shadow: 0 8px 24px rgba(15, 98, 254, 0.25), 0 0 14px rgba(0, 163, 137, 0.2);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.orbit-item-content:hover .orbit-thumb-wrapper,
+.orbit-item-content:focus-visible .orbit-thumb-wrapper {
+  transform: scale(1.18);
+  box-shadow: 0 12px 32px rgba(15, 98, 254, 0.4), 0 0 24px rgba(0, 163, 137, 0.45);
+}
+
+.orbit-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  background: #0f172a;
+  transition: transform 0.4s ease;
+}
+
+.orbit-item-content:hover .orbit-thumb-img {
+  transform: scale(1.08);
+}
+
+/* Micro scanline on thumbnails */
+.orbit-thumb-scan {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #38bdf8;
+  box-shadow: 0 0 8px #38bdf8;
+  animation: thumbScan 2.5s linear infinite;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+@keyframes thumbScan {
+  0% { top: 0%; opacity: 0; }
+  30% { opacity: 0.9; }
+  70% { opacity: 0.9; }
+  100% { top: 100%; opacity: 0; }
+}
+
+/* Orbit Label Pill */
+.orbit-pod-label {
+  margin-top: 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #0f172a;
+  background: #ffffff;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  white-space: nowrap;
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+
+.orbit-item-content:hover .orbit-pod-label {
+  background: #0f62fe;
+  color: #ffffff;
+  border-color: #0f62fe;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(15, 98, 254, 0.25);
+}
+
+/* Center Hub */
+.orbit-center-hub {
+  position: absolute;
+  width: 106px;
+  height: 106px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ffffff 0%, #edf5ff 60%, #e0effe 100%);
+  border: 2px solid rgba(15, 98, 254, 0.35);
+  box-shadow: 0 10px 30px rgba(15, 98, 254, 0.16), inset 0 0 16px rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.hub-center-icon {
+  color: #0f62fe;
+  margin-bottom: 3px;
+  animation: hub-icon-pulse 2s ease-in-out infinite;
+}
+
+@keyframes hub-icon-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+.hub-center-title {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #0a1426;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.hub-center-sub {
+  font-size: 0.52rem;
+  font-weight: 700;
+  color: #00a389;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* ==========================================================================
+   POPUP MODAL / LIGHTBOX ("just animation image should open")
+   ========================================================================== */
+
+.animation-lightbox-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background: rgba(3, 7, 18, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: lightboxFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes lightboxFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animation-lightbox-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 680px;
+  background: #0b132b;
+  border-radius: 20px;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6), 0 0 50px rgba(15, 98, 254, 0.25);
+  overflow: hidden;
+  animation: dialogScaleUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes dialogScaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Modal Header */
+.animation-lightbox-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 22px;
+  background: rgba(15, 23, 42, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lightbox-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lightbox-badge {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: rgba(56, 189, 248, 0.18);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.lightbox-title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.lightbox-close-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lightbox-close-btn:hover {
+  background: #dc2626;
+  border-color: #dc2626;
+  transform: rotate(90deg);
+}
+
+/* Modal Body — THE ANIMATED IMAGE */
+.animation-lightbox-body {
+  position: relative;
+  width: 100%;
+  height: 440px;
+  background: radial-gradient(circle at 50% 50%, #172554 0%, #030712 90%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.lightbox-animated-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  animation: modalImageBreathe 6s ease-in-out infinite;
+  filter: brightness(0.95) contrast(1.05) saturate(1.15);
+}
+
+@keyframes modalImageBreathe {
+  0%, 100% {
+    transform: scale(1) translateY(0px);
+  }
+  50% {
+    transform: scale(1.05) translateY(-6px);
+  }
+}
+
+/* Luminous Laser Diagnostic Scanline across the opened animation image */
+.lightbox-scanline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent 0%, rgba(56, 189, 248, 0.3) 15%, #38bdf8 50%, rgba(0, 163, 137, 0.6) 85%, transparent 100%);
+  box-shadow: 0 0 20px #38bdf8, 0 0 36px rgba(56, 189, 248, 0.9);
+  pointer-events: none;
+  animation: modalScan 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  z-index: 10;
+}
+
+@keyframes modalScan {
+  0% {
+    top: -5%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.95;
+  }
+  85% {
+    opacity: 0.95;
+  }
+  100% {
+    top: 105%;
+    opacity: 0;
+  }
+}
+
+/* ── Modal Anatomical Dots with Part Names ── */
+.modal-hotspot-pin {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 25;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-hotspot-pin:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 3px;
+}
+
+/* Pulsing rings */
+.modal-hotspot-ring-1,
+.modal-hotspot-ring-2 {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid var(--dot-color, #38bdf8);
+  animation: modalSpotPulse 2.2s cubic-bezier(0.2, 0.6, 0.35, 1) infinite;
+  pointer-events: none;
+}
+
+.modal-hotspot-ring-2 {
+  animation-delay: 0.7s;
+}
+
+@keyframes modalSpotPulse {
+  0% { transform: scale(0.6); opacity: 0.9; }
+  60% { transform: scale(2); opacity: 0; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+.modal-hotspot-core {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--dot-color, #38bdf8);
+  box-shadow: 0 0 12px var(--dot-color, #38bdf8), 0 0 4px #ffffff;
+  border: 2px solid #ffffff;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  z-index: 2;
+}
+
+.modal-hotspot-pin:hover .modal-hotspot-core,
+.modal-hotspot-pin.active .modal-hotspot-core {
+  transform: scale(1.4);
+  box-shadow: 0 0 20px var(--dot-color, #38bdf8), 0 0 8px #ffffff;
+}
+
+/* Part Name Label attached to dot - ONLY shown when that particular dot is clicked */
+.modal-hotspot-label {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background: rgba(10, 18, 38, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid var(--dot-color, #38bdf8);
+  border-radius: 8px;
+  padding: 6px 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 16px rgba(56, 189, 248, 0.35);
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 50;
+  animation: labelPopIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transform-origin: center center;
+}
+
+@keyframes labelPopIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-hotspot-pin.active .modal-hotspot-core {
+  transform: scale(1.5);
+  box-shadow: 0 0 24px var(--dot-color, #38bdf8), 0 0 8px #ffffff;
+}
+
+.lightbox-instruction-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: #38bdf8;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.instruction-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: beacon-pulse 1.8s infinite;
+}
+
+/* Smart directions for label based on coordinate */
+.modal-hotspot-label.pos-top {
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.modal-hotspot-label.pos-bottom {
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.modal-hotspot-label.pos-right {
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.modal-hotspot-label.pos-left {
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.modal-hotspot-title {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.modal-hotspot-sub {
+  font-size: 0.62rem;
+  font-weight: 600;
+  color: var(--dot-color, #38bdf8);
+  line-height: 1.2;
+  margin-top: 1px;
+}
+
+.modal-hotspot-pin:hover .modal-hotspot-sub,
+.modal-hotspot-pin.active .modal-hotspot-sub {
+  color: #ffffff;
+}
+
+/* Active Highlight detail banner */
+.modal-active-part-card {
+  position: absolute;
+  bottom: 14px;
+  left: 16px;
+  right: 16px;
+  background: rgba(10, 18, 38, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--dot-color, #38bdf8);
+  border-radius: 10px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  z-index: 30;
+  animation: slideUpPart 0.25s ease-out;
+}
+
+@keyframes slideUpPart {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-active-part-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-active-part-name {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+}
+
+.modal-active-part-sub {
+  font-size: 0.74rem;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+.modal-active-part-close {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #ffffff;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.modal-active-part-close:hover {
+  background: #dc2626;
+}
+
+/* Subtle corner reticles */
+.lightbox-corner {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-color: rgba(56, 189, 248, 0.6);
+  border-style: solid;
+  pointer-events: none;
+  z-index: 12;
+}
+
+.lightbox-corner.tl { top: 12px; left: 12px; border-width: 2px 0 0 2px; }
+.lightbox-corner.tr { top: 12px; right: 12px; border-width: 2px 2px 0 0; }
+.lightbox-corner.bl { bottom: 12px; left: 12px; border-width: 0 0 2px 2px; }
+.lightbox-corner.br { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+/* Modal Footer Caption */
+.animation-lightbox-footer {
+  padding: 14px 22px;
+  background: rgba(15, 23, 42, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.84rem;
+  color: #cbd5e1;
+}
+
+.lightbox-footer-caption {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lightbox-footer-beacon {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: beacon-pulse 1.8s infinite;
+}
+
+.lightbox-hint {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+
+/* Tablets (<= 768px) */
+@media (max-width: 768px) {
+  .orbit-stage {
+    width: 340px;
+    height: 340px;
+  }
+  .orbit-halo-bg,
+  .orbit-halo-ring,
+  .orbit-track {
+    width: 270px;
+    height: 270px;
+  }
+  .orbit-thumb-wrapper {
+    width: 76px;
+    height: 76px;
+  }
+  .orbit-center-hub {
+    width: 96px;
+    height: 96px;
+  }
+  .animation-lightbox-dialog {
+    max-width: 94vw;
+  }
+  .animation-lightbox-body {
+    height: 380px;
+  }
+}
+
+/* Mobile Devices (<= 576px) */
+@media (max-width: 576px) {
+  .rotating-showcase-section {
+    margin: 24px 0 32px 0;
+  }
+
+  .rotating-showcase-caption {
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+    padding: 5px 12px;
+    margin-bottom: 18px;
+    max-width: 92vw;
+    text-align: center;
+  }
+
+  /* Safe orbit size that guarantees NO horizontal scrolling on mobile */
+  .orbit-stage {
+    width: 280px;
+    height: 280px;
+  }
+
+  .orbit-halo-bg,
+  .orbit-halo-ring,
+  .orbit-track {
+    width: 200px;
+    height: 200px;
+  }
+
+  .orbit-pod {
+    width: 70px;
+    height: 70px;
+  }
+
+  .orbit-thumb-wrapper {
+    width: 60px;
+    height: 60px;
+    padding: 2.5px;
+    box-shadow: 0 6px 18px rgba(15, 98, 254, 0.22);
+  }
+
+  .orbit-pod-label {
+    font-size: 0.62rem;
+    padding: 2px 7px;
+    margin-top: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .orbit-center-hub {
+    width: 78px;
+    height: 78px;
+  }
+
+  .hub-center-icon {
+    width: 22px;
+    height: 22px;
+    margin-bottom: 2px;
+  }
+
+  .hub-center-title {
+    font-size: 0.58rem;
+    letter-spacing: 0.5px;
+  }
+
+  .hub-center-sub {
+    font-size: 0.46rem;
+    margin-top: 1px;
+  }
+
+  /* Lightbox / Modal Mobile View */
+  .animation-lightbox-backdrop {
+    padding: 10px;
+  }
+
+  .animation-lightbox-dialog {
+    max-width: 100%;
+    max-height: 92vh;
+    border-radius: 16px;
+  }
+
+  .animation-lightbox-header {
+    padding: 12px 14px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .lightbox-title-wrap {
+    gap: 8px;
+  }
+
+  .lightbox-badge {
+    font-size: 0.58rem;
+    padding: 2px 7px;
+  }
+
+  .lightbox-title {
+    font-size: 0.95rem;
+  }
+
+  .lightbox-instruction-pill {
+    font-size: 0.6rem;
+    padding: 3px 8px;
+    gap: 5px;
+  }
+
+  .lightbox-close-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 0.95rem;
+  }
+
+  .animation-lightbox-body {
+    height: 280px;
+  }
+
+  .lightbox-animated-img {
+    object-fit: cover;
+  }
+
+  /* Mobile touch hotspots */
+  .modal-hotspot-pin {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .modal-hotspot-core {
+    width: 14px;
+    height: 14px;
+  }
+
+  .modal-hotspot-ring-1,
+  .modal-hotspot-ring-2 {
+    width: 32px;
+    height: 32px;
+  }
+
+  .modal-hotspot-label {
+    padding: 4px 8px;
+    max-width: 160px;
+  }
+
+  .modal-hotspot-title {
+    font-size: 0.68rem;
+  }
+
+  .modal-hotspot-sub {
+    font-size: 0.56rem;
+  }
+
+  .modal-active-part-card {
+    bottom: 8px;
+    left: 8px;
+    right: 8px;
+    padding: 8px 12px;
+  }
+
+  .modal-active-part-name {
+    font-size: 0.78rem;
+  }
+
+  .modal-active-part-sub {
+    font-size: 0.66rem;
+  }
+
+  .animation-lightbox-footer {
+    padding: 10px 14px;
+    font-size: 0.74rem;
+  }
+
+  .lightbox-hint {
+    display: none;
+  }
+}
+
+/* Ultra-Compact Phones (<= 380px screens like iPhone SE, small Androids) */
+@media (max-width: 380px) {
+  .orbit-stage {
+    width: 250px;
+    height: 250px;
+  }
+
+  .orbit-halo-bg,
+  .orbit-halo-ring,
+  .orbit-track {
+    width: 175px;
+    height: 175px;
+  }
+
+  .orbit-pod {
+    width: 58px;
+    height: 58px;
+  }
+
+  .orbit-thumb-wrapper {
+    width: 52px;
+    height: 52px;
+  }
+
+  .orbit-pod-label {
+    font-size: 0.56rem;
+    padding: 1px 5px;
+  }
+
+  .orbit-center-hub {
+    width: 68px;
+    height: 68px;
+  }
+
+  .hub-center-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .hub-center-title {
+    font-size: 0.52rem;
+  }
+
+  .hub-center-sub {
+    display: none;
+  }
+
+  .animation-lightbox-body {
+    height: 250px;
+  }
+}

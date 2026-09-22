@@ -1,0 +1,1226 @@
+/* ==========================================================================
+   CLINICAL EXCELLENCE & ADVANCED ORTHOPEDIC SECTIONS
+   World-class styling inspired by leading tertiary orthopedic centers
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. SURGICAL TRACK RECORD & CLINICAL STATISTICS
+   -------------------------------------------------------------------------- */
+.surgical-track-section {
+  position: relative;
+  background:
+    radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.14), transparent 30%),
+    linear-gradient(135deg, #0d2b45 0%, #0b536f 60%, #087588 100%);
+  color: #ffffff;
+  padding: 5rem 0;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(13, 43, 69, 0.18);
+}
+
+.surgical-track-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 10% 90%, rgba(2, 195, 154, 0.08), transparent 35%),
+    linear-gradient(180deg, rgba(4, 28, 45, 0.25) 0%, rgba(4, 28, 45, 0.45) 100%);
+  pointer-events: none;
+}
+
+.surgical-track-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.surgical-track-header {
+  max-width: 860px;
+  margin-bottom: 2.75rem;
+}
+
+.surgical-track-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #7de2d1;
+  background: rgba(125, 226, 209, 0.12);
+  border: 1px solid rgba(125, 226, 209, 0.28);
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+
+.surgical-track-title {
+  font-size: clamp(1.85rem, 3.2vw, 2.65rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.surgical-track-intro {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0;
+}
+
+.surgical-track-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.surgical-stat-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1.6rem 1.35rem 1.4rem;
+  border-radius: 16px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(240, 250, 253, 0.95));
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 14px 34px rgba(6, 38, 62, 0.18);
+  overflow: hidden;
+  transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.24s ease, border-color 0.24s ease;
+}
+
+.surgical-stat-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #028090, #00a896);
+}
+
+.surgical-stat-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(2, 128, 144, 0.35);
+  box-shadow: 0 20px 42px rgba(6, 38, 62, 0.25);
+}
+
+.surgical-stat-card.primary-hero-stat {
+  background:
+    radial-gradient(circle at 90% 10%, rgba(255, 255, 255, 0.22), transparent 40%),
+    linear-gradient(135deg, #0c99c1 0%, #17314c 100%);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.surgical-stat-card.primary-hero-stat::before {
+  background: linear-gradient(90deg, #f0f3bd, #7de2d1);
+}
+
+.surgical-stat-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 0.9rem;
+}
+
+.surgical-stat-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: rgba(2, 128, 144, 0.12);
+  color: #028090;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.surgical-stat-card.primary-hero-stat .surgical-stat-icon {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+.surgical-stat-number {
+  font-size: clamp(1.85rem, 2.4vw, 2.25rem);
+  font-weight: 800;
+  line-height: 1;
+  color: #028090;
+  letter-spacing: -0.02em;
+}
+
+.surgical-stat-card.primary-hero-stat .surgical-stat-number {
+  color: #ffffff;
+}
+
+.surgical-stat-label {
+  font-size: 0.9125rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #17314c;
+  margin: 0;
+}
+
+.surgical-stat-card.primary-hero-stat .surgical-stat-label {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* --------------------------------------------------------------------------
+   2. AREA OF SPECIALTIES (PROCEDURES GRID)
+   -------------------------------------------------------------------------- */
+.specialties-section {
+  padding: 5.5rem 0;
+  background: #ffffff;
+}
+
+.specialties-cta-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 1.75rem 0 3rem;
+}
+
+.specialties-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 26px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  transition: all 0.22s ease;
+  box-shadow: 0 10px 24px rgba(23, 49, 76, 0.12);
+}
+
+.specialties-btn.btn-navy {
+  background: #17314c;
+  color: #ffffff;
+}
+
+.specialties-btn.btn-navy:hover {
+  background: #028090;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(2, 128, 144, 0.24);
+}
+
+.specialties-btn.btn-whatsapp {
+  background: #25d366;
+  color: #ffffff;
+}
+
+.specialties-btn.btn-whatsapp:hover {
+  background: #1ebe5d;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(37, 211, 102, 0.28);
+}
+
+.specialties-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.specialty-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid rgba(23, 49, 76, 0.12);
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 14px 34px rgba(23, 49, 76, 0.07);
+  transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+}
+
+.specialty-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 46px rgba(23, 49, 76, 0.14);
+  border-color: rgba(2, 128, 144, 0.3);
+}
+
+.specialty-image-wrap {
+  position: relative;
+  height: 185px;
+  overflow: hidden;
+  background: #e2e8f0;
+}
+
+.specialty-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.specialty-card:hover .specialty-img {
+  transform: scale(1.05);
+}
+
+.specialty-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(23, 49, 76, 0.88);
+  backdrop-filter: blur(6px);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.specialty-body {
+  padding: 1.5rem 1.35rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.specialty-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #17314c;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.specialty-desc {
+  font-size: 0.875rem;
+  color: #516176;
+  line-height: 1.6;
+  margin-bottom: 1.1rem;
+}
+
+.specialty-procedures-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem;
+  border-top: 1px solid rgba(23, 49, 76, 0.08);
+  padding-top: 0.85rem;
+  flex-grow: 1;
+}
+
+.specialty-procedure-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.84rem;
+  color: #243447;
+  font-weight: 600;
+  margin-bottom: 7px;
+  line-height: 1.35;
+}
+
+.specialty-procedure-item i {
+  color: #028090;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+.specialty-action-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: rgba(2, 128, 144, 0.09);
+  color: #028090;
+  font-weight: 700;
+  font-size: 0.84rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.specialty-card:hover .specialty-action-link {
+  background: #028090;
+  color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   3. CENTRES OF EXCELLENCE (FEATURE PILLARS)
+   -------------------------------------------------------------------------- */
+.centres-excellence-section {
+  position: relative;
+  background: #f8fbfd;
+  padding: 5.5rem 0 2rem;
+}
+
+.coe-header {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 3.5rem;
+}
+
+.coe-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 3.5rem;
+  margin-bottom: 4.5rem;
+  padding: 2.75rem;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 20px 48px rgba(23, 49, 76, 0.08);
+  border: 1px solid rgba(23, 49, 76, 0.08);
+}
+
+.coe-row.reverse {
+  direction: rtl;
+}
+
+.coe-row.reverse > * {
+  direction: ltr;
+}
+
+.coe-media {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(23, 49, 76, 0.16);
+  min-height: 380px;
+  background: #0f172a;
+}
+
+.coe-img {
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  object-fit: cover;
+  display: block;
+}
+
+.coe-media-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(15, 23, 42, 0.65) 100%);
+}
+
+.coe-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.coe-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #028090;
+  background: rgba(2, 128, 144, 0.1);
+  padding: 5px 12px;
+  border-radius: 999px;
+  margin-bottom: 0.85rem;
+  align-self: flex-start;
+}
+
+.coe-title {
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  font-weight: 800;
+  color: #17314c;
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+}
+
+.coe-subtitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #eb6a56;
+  margin-bottom: 1rem;
+}
+
+.coe-desc {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #475569;
+  margin-bottom: 1.35rem;
+}
+
+.coe-points-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.coe-point-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #1e293b;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.coe-point-item i {
+  color: #028090;
+  font-size: 1rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* 6-Benefits Grid for Sports Medicine */
+.coe-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.coe-benefit-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 14px;
+  background: rgba(2, 128, 144, 0.05);
+  border: 1px solid rgba(2, 128, 144, 0.12);
+  border-radius: 10px;
+}
+
+.coe-benefit-box i {
+  color: #028090;
+  font-size: 0.95rem;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.coe-benefit-title {
+  font-size: 0.84rem;
+  font-weight: 800;
+  color: #17314c;
+  display: block;
+  line-height: 1.25;
+}
+
+.coe-benefit-desc {
+  font-size: 0.75rem;
+  color: #64748b;
+  display: block;
+  margin-top: 2px;
+}
+
+.coe-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: #17314c;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  align-self: flex-start;
+  transition: all 0.2s ease;
+  box-shadow: 0 8px 20px rgba(23, 49, 76, 0.15);
+}
+
+.coe-cta-btn:hover {
+  background: #028090;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(2, 128, 144, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   4. 7-STEP PATIENT CARE ROADMAP
+   -------------------------------------------------------------------------- */
+.journey-shell {
+  padding: 5.5rem 0;
+  background: #fdfefe;
+}
+
+.journey-header-wrap {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 2.5rem;
+}
+
+.journey-top-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 1.75rem 2.25rem;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #17314c 0%, #028090 100%);
+  color: #ffffff;
+  box-shadow: 0 20px 48px rgba(23, 49, 76, 0.18);
+  margin-bottom: 3.5rem;
+}
+
+.journey-cta-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 4px;
+}
+
+.journey-cta-sub {
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0;
+}
+
+.journey-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 24px;
+  border-radius: 999px;
+  background: #eb6a56;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  flex-shrink: 0;
+  box-shadow: 0 10px 24px rgba(235, 106, 86, 0.35);
+  transition: all 0.2s ease;
+}
+
+.journey-cta-btn:hover {
+  background: #df5843;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(235, 106, 86, 0.45);
+}
+
+.journey-timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.journey-step-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid rgba(23, 49, 76, 0.1);
+  border-radius: 16px;
+  padding: 1.75rem 1.4rem 1.5rem;
+  box-shadow: 0 12px 30px rgba(23, 49, 76, 0.06);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.journey-step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(23, 49, 76, 0.12);
+  border-color: rgba(2, 128, 144, 0.3);
+}
+
+.journey-step-card.highlight {
+  border-color: rgba(235, 106, 86, 0.35);
+  background: linear-gradient(180deg, #ffffff 0%, rgba(235, 106, 86, 0.04) 100%);
+}
+
+.journey-step-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.journey-step-pill {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #028090;
+  background: rgba(2, 128, 144, 0.1);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.journey-step-card.highlight .journey-step-pill {
+  color: #eb6a56;
+  background: rgba(235, 106, 86, 0.12);
+}
+
+.journey-step-number {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #17314c;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.journey-step-card.highlight .journey-step-number {
+  background: #eb6a56;
+}
+
+.journey-step-title {
+  font-size: 1.0625rem;
+  font-weight: 800;
+  color: #17314c;
+  line-height: 1.35;
+  margin-bottom: 0.5rem;
+}
+
+.journey-step-desc {
+  font-size: 0.875rem;
+  color: #516176;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.journey-step-action {
+  font-size: 0.78125rem;
+  font-weight: 700;
+  color: #028090;
+  background: rgba(2, 128, 144, 0.08);
+  padding: 6px 10px;
+  border-radius: 6px;
+  border-left: 3px solid #028090;
+}
+
+.journey-step-card.highlight .journey-step-action {
+  color: #eb6a56;
+  background: rgba(235, 106, 86, 0.08);
+  border-left-color: #eb6a56;
+}
+
+/* --------------------------------------------------------------------------
+   5. VERIFIED GOOGLE REVIEWS & TESTIMONIALS CAROUSEL
+   -------------------------------------------------------------------------- */
+.google-reviews-section {
+  position: relative;
+  background: #f7fbfd;
+  padding: 5.5rem 0;
+  overflow: hidden;
+}
+
+.google-reviews-topbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.google-mark-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  color: #17314c;
+  background: #ffffff;
+  padding: 6px 14px;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(23, 49, 76, 0.08);
+  margin-bottom: 0.85rem;
+}
+
+.google-g-icon {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #4285f4;
+  font-family: Arial, sans-serif;
+}
+
+.google-rating-summary-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #ffffff;
+  border: 1px solid rgba(23, 49, 76, 0.1);
+  border-radius: 14px;
+  padding: 16px 20px;
+  box-shadow: 0 12px 30px rgba(23, 49, 76, 0.08);
+  flex-shrink: 0;
+}
+
+.google-rating-score {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #17314c;
+  line-height: 1;
+}
+
+.google-stars {
+  display: flex;
+  gap: 3px;
+  color: #fbbc04;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.google-rating-label {
+  font-size: 0.8125rem;
+  color: #64748b;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Philosophy & Hospital Location Cards */
+.google-meta-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.google-meta-card {
+  background: #ffffff;
+  border: 1px solid rgba(23, 49, 76, 0.1);
+  border-radius: 16px;
+  padding: 1.75rem;
+  box-shadow: 0 12px 30px rgba(23, 49, 76, 0.06);
+}
+
+.google-meta-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #17314c;
+  margin-bottom: 0.75rem;
+}
+
+.google-meta-quote {
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #028090;
+  background: rgba(2, 128, 144, 0.07);
+  border-left: 4px solid #028090;
+  padding: 12px 16px;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 1rem;
+}
+
+.google-meta-text {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #475569;
+  margin: 0;
+}
+
+/* Carousel Track */
+.google-reviews-carousel-wrap {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.google-reviews-track {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 10px 4px 20px;
+  scrollbar-width: none;
+}
+
+.google-reviews-track::-webkit-scrollbar {
+  display: none;
+}
+
+.google-review-card {
+  flex: 0 0 calc((100% - 2.5rem) / 3);
+  scroll-snap-align: start;
+  background: #ffffff;
+  border: 1px solid rgba(23, 49, 76, 0.1);
+  border-radius: 16px;
+  padding: 1.6rem 1.4rem;
+  box-shadow: 0 12px 30px rgba(23, 49, 76, 0.07);
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+  max-height: 340px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.google-review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(23, 49, 76, 0.12);
+}
+
+.google-review-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+}
+
+.google-review-author-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.google-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(2, 128, 144, 0.12);
+  color: #028090;
+  font-weight: 800;
+  font-size: 0.9375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.google-author-name {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #17314c;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.google-review-date {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.google-treatment-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #028090;
+  background: rgba(2, 128, 144, 0.08);
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+}
+
+.google-review-body {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #475569;
+  margin: 0;
+  overflow-y: auto;
+  flex-grow: 1;
+  padding-right: 6px;
+}
+
+.google-carousel-nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 1rem;
+}
+
+.google-nav-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(23, 49, 76, 0.16);
+  background: #ffffff;
+  color: #17314c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(23, 49, 76, 0.08);
+  transition: all 0.2s ease;
+}
+
+.google-nav-btn:hover {
+  background: #028090;
+  color: #ffffff;
+  border-color: #028090;
+}
+
+.google-actions-bar {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.google-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.google-action-btn.primary {
+  background: #028090;
+  color: #ffffff;
+}
+
+.google-action-btn.primary:hover {
+  background: #006c7a;
+  transform: translateY(-2px);
+}
+
+.google-action-btn.secondary {
+  background: #17314c;
+  color: #ffffff;
+}
+
+.google-action-btn.secondary:hover {
+  background: #0d2135;
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   6. TRUST HIGHLIGHTS (6-BOX BENEFIT GRID)
+   -------------------------------------------------------------------------- */
+.trust-benefits-section {
+  padding: 5.5rem 0;
+  background: #ffffff;
+}
+
+.trust-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.trust-benefit-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid rgba(23, 49, 76, 0.1);
+  border-radius: 16px;
+  padding: 1.85rem 1.6rem;
+  box-shadow: 0 14px 34px rgba(23, 49, 76, 0.07);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.trust-benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 44px rgba(23, 49, 76, 0.13);
+}
+
+.trust-benefit-top-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: 16px 16px 0 0;
+}
+
+.trust-benefit-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.trust-benefit-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #17314c;
+  line-height: 1.3;
+  margin-bottom: 0.6rem;
+}
+
+.trust-benefit-desc {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #516176;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   7. TOP EXECUTIVE EMERGENCY & CONTACT BAR (FOR HEADER)
+   -------------------------------------------------------------------------- */
+.header-top-bar {
+  background: #0f2338;
+  color: #ffffff;
+  font-size: 0.8125rem;
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.header-top-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.header-top-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.header-top-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.88);
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+
+.header-top-item:hover {
+  color: #7de2d1;
+}
+
+.header-top-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.header-top-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.header-top-btn.whatsapp {
+  background: rgba(37, 211, 102, 0.18);
+  color: #25d366;
+  border: 1px solid rgba(37, 211, 102, 0.35);
+}
+
+.header-top-btn.whatsapp:hover {
+  background: #25d366;
+  color: #ffffff;
+}
+
+.header-top-btn.emergency {
+  background: rgba(235, 106, 86, 0.18);
+  color: #eb6a56;
+  border: 1px solid rgba(235, 106, 86, 0.35);
+}
+
+/* --------------------------------------------------------------------------
+   8. RESPONSIVE BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 1120px) {
+  .surgical-track-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .specialties-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .journey-timeline-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .google-review-card {
+    flex: 0 0 calc((100% - 1.25rem) / 2);
+  }
+
+  .trust-benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
+  .coe-row {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1.75rem;
+  }
+
+  .coe-row.reverse {
+    direction: ltr;
+  }
+
+  .coe-media {
+    min-height: 260px;
+  }
+
+  .coe-img {
+    min-height: 260px;
+  }
+
+  .journey-top-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
+  }
+
+  .google-reviews-topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .google-meta-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .surgical-track-section {
+    padding: 3.5rem 0;
+  }
+
+  .surgical-track-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .specialties-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .specialties-cta-bar {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin: 1.25rem 0 2rem;
+  }
+
+  .specialties-btn {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+    padding: 12px 20px;
+    font-size: 0.88rem;
+  }
+
+  .journey-timeline-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .google-review-card {
+    flex: 0 0 100%;
+  }
+
+  .trust-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header-top-left {
+    display: none;
+  }
+
+  .coe-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+}

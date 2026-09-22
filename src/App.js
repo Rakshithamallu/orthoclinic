@@ -13,6 +13,7 @@ import './styles/pages.css';
 import './styles/loading-screen.css';
 import './styles/animations.css';
 import './styles/social-reels.css';
+import './styles/clinical-excellence.css';
 import './styles/responsive.css';
 
 // Components
@@ -39,16 +40,11 @@ import BlogPage from './pages/BlogPage';
 import BlogDetailPage from './pages/BlogDetailPage';
 import FaqPage from './pages/FaqPage';
 import ContactPage from './pages/ContactPage';
+import SpecialtyDetailPage from './pages/SpecialtyDetailPage';
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
   const [isAppointmentModalOpen, setIsAppointmentModalOpen] = useState(false);
-  const [showIntroAnimation, setShowIntroAnimation] = useState(() => {
-    try {
-      return sessionStorage.getItem('ortho_clinic_intro_seen') !== 'true';
-    } catch (e) {
-      return true;
-    }
-  });
 
   const handleOpenAppointmentModal = () => {
     setIsAppointmentModalOpen(true);
@@ -58,17 +54,13 @@ function App() {
     setIsAppointmentModalOpen(false);
   };
 
-  const handleAnimationComplete = () => {
-    setShowIntroAnimation(false);
-  };
-
   return (
     <Router>
       <ErrorBoundary>
         <div className="clinic-app-root">
-          {/* 10-Second Cinematic Medical Story Loading Screen */}
-          {showIntroAnimation && (
-            <LoadingScreen onComplete={handleAnimationComplete} />
+          {/* Sainik Hospital-style Minimal Elegant Loading Screen */}
+          {isLoading && (
+            <LoadingScreen onComplete={() => setIsLoading(false)} />
           )}
 
           {/* Scroll Progress Bar at the Top */}
@@ -86,6 +78,8 @@ function App() {
             <Route path="/about" element={<AboutPage onOpenAppointmentModal={handleOpenAppointmentModal} />} />
             <Route path="/treatments" element={<TreatmentsPage onOpenAppointmentModal={handleOpenAppointmentModal} />} />
             <Route path="/treatments/:categoryId" element={<TreatmentDetailPage onOpenAppointmentModal={handleOpenAppointmentModal} />} />
+            <Route path="/specialties/:specialtyId" element={<SpecialtyDetailPage onOpenAppointmentModal={handleOpenAppointmentModal} />} />
+            <Route path="/specialties" element={<SpecialtyDetailPage onOpenAppointmentModal={handleOpenAppointmentModal} />} />
             <Route path="/conditions" element={<ConditionsPage onOpenAppointmentModal={handleOpenAppointmentModal} />} />
             <Route path="/conditions/:conditionId" element={<ConditionDetailPage onOpenAppointmentModal={handleOpenAppointmentModal} />} />
             <Route path="/facilities" element={<FacilitiesPage onOpenAppointmentModal={handleOpenAppointmentModal} />} />

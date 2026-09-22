@@ -364,29 +364,224 @@ export const CLINIC_FACILITIES = [
   },
 ];
 
+/**
+ * Area of Specialties Showcase (Procedures by Anatomical Focus)
+ * Modeled after high-volume tertiary center structure
+ */
+export const AREA_OF_SPECIALTIES = [
+  {
+    id: "knee",
+    title: "Knee Procedures",
+    shortName: "Knee",
+    badge: "Keyhole & Robotic",
+    image: `${BASE}/assets/images/knee-arthroscopy.jpg`,
+    description: "Minimally invasive keyhole arthroscopy, ligament reconstruction, and robotic-assisted joint replacement for total knee function.",
+    procedures: [
+      "Knee Arthroscopy (Keyhole)",
+      "ACL Reconstruction",
+      "PCL Reconstruction",
+      "Total Knee Replacement (TKR)",
+      "Meniscal Repair & Preservation",
+      "Cartilage Repair (OATS)",
+    ],
+    link: "/specialties/knee",
+  },
+  {
+    id: "hip",
+    title: "Hip Procedures",
+    shortName: "Hip",
+    badge: "Joint Preservation & Arthroplasty",
+    image: `${BASE}/assets/images/joint-replacement.jpg`,
+    description: "Advanced hip preservation, keyhole labral repair, fracture management, and minimally invasive total hip replacement.",
+    procedures: [
+      "Hip Arthroscopy",
+      "Hip Cartilage Repair",
+      "Hip Fracture Surgery",
+      "Hip Labral Repair",
+      "Minimally Invasive Total Hip Replacement",
+      "Core Decompression for AVN",
+    ],
+    link: "/specialties/hip",
+  },
+  {
+    id: "shoulder",
+    title: "Shoulder Procedures",
+    shortName: "Shoulder",
+    badge: "Specialized Arthroscopy",
+    image: `${BASE}/assets/images/shoulder-arthroscopy.jpg`,
+    description: "State-of-the-art shoulder keyhole procedures restoring full painless overhead movement and joint stabilization.",
+    procedures: [
+      "Shoulder Arthroscopy",
+      "Rotator Cuff Suture Anchor Repair",
+      "SLAP Lesion Repair",
+      "Arthroscopic Bankart Repair",
+      "Shoulder Joint Replacement",
+      "Labrum Reconstruction",
+    ],
+    link: "/specialties/shoulder",
+  },
+  {
+    id: "elbow-trauma",
+    title: "Elbow & Sports Trauma",
+    shortName: "Elbow & Sports",
+    badge: "Sports Medicine & Trauma",
+    image: `${BASE}/assets/images/sports-rehab.jpg`,
+    description: "Specialized care for athletes and active individuals with tennis elbow, golfer's elbow, tendon ruptures, and acute fracture trauma.",
+    procedures: [
+      "Elbow Arthroscopy",
+      "Tennis Elbow Surgical Release",
+      "Golfer's Elbow Repair",
+      "Ligament Reconstruction",
+      "Elbow Tendon Repair",
+      "Complex Fracture Fixation",
+    ],
+    link: "/specialties/sports-trauma",
+  },
+];
+
+/**
+ * Centres of Excellence (4 Deep-Dive Pillars)
+ */
+export const CENTRES_OF_EXCELLENCE = [
+  {
+    id: "arthroscopy",
+    tag: "Minimally Invasive Care",
+    title: "Minimally Invasive Surgical Options: Arthroscopic Surgery",
+    subtitle: "Advanced keyhole joint surgery without large incisions",
+    description: "Arthroscopic surgeries are precision procedures performed to diagnose and definitively treat damaged cartilage, torn ligaments, and ruptured tendons inside a joint using a high-definition miniature arthroscope. This minimally invasive technique is performed by surgeons with dedicated fellowship training in arthroscopic techniques, delivering sub-millimeter anatomical restoration with minimal tissue disruption.",
+    image: `${BASE}/assets/images/knee-arthroscopy.jpg`,
+    points: [
+      "Keyhole incisions measuring just a few millimeters",
+      "Minimal soft-tissue trauma and negligible blood loss",
+      "Preservation of surrounding joint capsule and healthy ligaments",
+      "Significantly shorter hospital stay and rapid return home",
+    ],
+    ctaText: "Explore Arthroscopy",
+    ctaLink: "/specialties/knee",
+    theme: "dark-teal",
+  },
+  {
+    id: "joint-replacement",
+    tag: "Restoring Pain-Free Mobility",
+    title: "Regain Your Active Lifestyle with Advanced Joint Replacement",
+    subtitle: "Robotic-assisted and conventional joint arthroplasty for debilitating arthritis",
+    description: "Joint replacement surgery (Arthroplasty) is a transformative surgical procedure performed to eliminate chronic pain and restore fluid motion in severely damaged knee, hip, or shoulder joints. After thorough radiological analysis and gait evaluation, our surgical team formulates a custom implant alignment plan to replace damaged articular cartilage with durable, biocompatible prostheses.",
+    image: `${BASE}/assets/images/joint-replacement.jpg`,
+    points: [
+      "Sub-millimeter implant alignment using 3D surgical planning",
+      "Maximal natural bone preservation for enhanced joint kinematics",
+      "High-flexion designs allowing comfortable sitting and stairs",
+      "Rapid post-operative mobilization within 24 hours of surgery",
+    ],
+    ctaText: "Explore Joint Replacement",
+    ctaLink: "/specialties/hip",
+    theme: "cyan-blue",
+    reverse: true,
+  },
+  {
+    id: "sports-medicine",
+    tag: "Sports Medicine Specialist",
+    title: "Comprehensive Sports Injury Solutions with an Emphasis on Keyhole Techniques",
+    subtitle: "Expertise in getting athletes and active individuals back in the game",
+    description: "Our sports medicine division delivers integrated diagnostic, preventive, and surgical care for athletic injuries affecting all major joints. We prioritize structured non-operative rehabilitation and biologic therapy first, reserving arthroscopic reconstruction as a definitive, high-precision solution when joint stability demands surgical restoration.",
+    image: `${BASE}/assets/images/sports-rehab.jpg`,
+    benefits: [
+      { title: "Smaller Incisions", desc: "Cosmetic keyhole portals" },
+      { title: "Minimal Soft Tissue Trauma", desc: "Preserves adjacent muscle fibers" },
+      { title: "Less Pain and Scars", desc: "Significantly reduced post-op ache" },
+      { title: "Lower Infection Rate", desc: "Sterile closed joint technique" },
+      { title: "Faster Healing Time", desc: "Accelerated cellular recovery" },
+      { title: "Earlier Mobilization", desc: "Same-day or next-day movement" },
+    ],
+    ctaText: "Explore Sports Medicine",
+    ctaLink: "/specialties/shoulder",
+    theme: "dark-navy",
+  },
+  {
+    id: "biologics-trauma",
+    tag: "Cellular Healing & Fracture Care",
+    title: "Fractures & Biologic Treatments: Non-Surgical Orthobiologics (PRP)",
+    subtitle: "Biological joint preservation and high-velocity trauma management",
+    description: "Combining high-precision fracture fixation with cutting-edge Orthobiologics Therapy (Platelet-Rich Plasma - PRP). Autologous growth factor infiltration promotes accelerated tendon, ligament, and cartilage healing, frequently helping patients avoid or delay major surgery while achieving swift recovery from painful musculoskeletal conditions.",
+    image: `${BASE}/assets/images/trauma-fracture-clean.jpg`,
+    points: [
+      "Autologous Platelet-Rich Plasma (PRP) cellular joint therapy",
+      "Proven effective in early osteoarthritis, tennis elbow, and tendonitis",
+      "Minimally invasive plate osteosynthesis (MIPO) for complex fractures",
+      "Comprehensive acute trauma stabilization with 24/7 ICU support",
+    ],
+    ctaText: "Explore Fracture & Biologics",
+    ctaLink: "/specialties/sports-trauma",
+    theme: "teal-cyan",
+    reverse: true,
+  },
+];
+
+/**
+ * 7-Step Treatment Journey: The Patient Care Roadmap
+ * Comprehensive pathway from clinical evaluation to full active recovery
+ */
 export const PATIENT_JOURNEY = [
   {
     step: "01",
-    phase: "Comprehensive Consultation",
-    title: "Understand Your Condition",
-    description: "Detailed evaluation of your symptoms, pain triggers, lifestyle demands, and prior medical history. We listen first to thoroughly understand the root cause.",
-    action: "Physical examination & joint mobility tests",
+    phase: "Clinical Assessment",
+    title: "Consultation & Detailed Clinical Evaluation",
+    description: "Your journey begins with an in-depth one-on-one consultation, medical history review, lifestyle analysis, and precise clinical assessment of joint mobility, alignment, and pain triggers.",
+    action: "Physical examination & joint kinematics review",
+    icon: "consultation",
   },
   {
     step: "02",
-    phase: "Precision Diagnosis",
-    title: "Diagnosis & Treatment Planning",
-    description: "Integrating diagnostic imaging (digital X-ray / MRI review) to formulate a tailored, transparent treatment plan prioritizing conservative options before surgery.",
-    action: "Personalized roadmap with surgical vs non-surgical options",
+    phase: "Diagnostic Clarity",
+    title: "Advanced Diagnostic Imaging",
+    description: "Digital X-rays, high-resolution ultrasound, and MRI scans evaluate cartilage thickness, ligament integrity, alignment, and bony structures for an indisputable diagnosis.",
+    action: "Digital radiology & multi-planar MRI evaluation",
+    icon: "imaging",
   },
   {
     step: "03",
-    phase: "Guided Recovery",
-    title: "Treatment & Dedicated Follow-Up",
-    description: "Execution of advanced surgical intervention or guided non-surgical therapy with active rehabilitation support to restore full strength and joyful movement.",
-    action: "Progress monitoring until full functional return",
+    phase: "Tailored Planning",
+    title: "Personalized Treatment Planning",
+    description: "Based on your clinical reports, age, functional demands, and recovery goals, Dr. Shashi creates a transparent, evidence-based treatment blueprint discussing every option with you.",
+    action: "Shared decision-making on conservative vs surgical options",
+    icon: "planning",
+  },
+  {
+    step: "04",
+    phase: "Joint Preservation",
+    title: "Non-Surgical & Regenerative Therapies",
+    description: "For early to moderate joint concerns, care emphasizes non-surgical protocols: medical management, targeted physical therapy, and Orthobiologics (PRP therapy) for cellular healing.",
+    action: "PRP infiltration, viscosupplementation & physical therapy",
+    icon: "biologics",
+    highlight: true,
+  },
+  {
+    step: "05",
+    phase: "Surgical Mastery",
+    title: "Arthroscopy or Robotic Joint Replacement",
+    description: "When indicated, advanced minimally invasive keyhole arthroscopy or robotic-assisted joint replacement ensures sub-millimeter precision, minimal blood loss, and optimal implant position.",
+    action: "High-precision keyhole surgery or robotic arthroplasty",
+    icon: "surgery",
+    highlight: true,
+  },
+  {
+    step: "06",
+    phase: "Guided Healing",
+    title: "Structured Rehabilitation & Recovery",
+    description: "Our dedicated rehabilitation protocol guides a focused physical therapy program to rebuild muscular strength, joint flexibility, balance, and proprioceptive confidence safely.",
+    action: "Personalized post-operative physiotherapy regimen",
+    icon: "rehab",
+  },
+  {
+    step: "07",
+    phase: "Lasting Wellness",
+    title: "Return to an Active Lifestyle",
+    description: "The ultimate milestone is restoring your life without pain — whether that means competitive sports, daily fitness, walking unhindered, climbing stairs, or playing with family comfortably.",
+    action: "Full functional clearance & lifelong joint health guidance",
+    icon: "active-life",
   },
 ];
+
 
 export const WHY_CHOOSE_US = [
   {
