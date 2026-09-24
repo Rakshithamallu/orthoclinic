@@ -1,6 +1,6 @@
 /* ==========================================================================
    SECTIONS STYLES
-   Stats, About Doctor, Education, Fellowships, Research, Journey, Contact
+   Stats, About Doctor, Education, Fellowships, Journey, Contact
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -632,111 +632,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   6. RESEARCH & PUBLICATIONS SECTION
-   -------------------------------------------------------------------------- */
-.research-overview-card {
-  background: linear-gradient(135deg, #0b1a38 0%, #15294f 100%);
-  border-radius: var(--radius-lg);
-  padding: 40px;
-  color: #ffffff;
-  margin-bottom: 40px;
-  box-shadow: var(--shadow-md);
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 40px;
-  align-items: center;
-}
-
-.research-overview-text h3 {
-  color: #ffffff;
-  font-size: 1.65rem;
-  margin-bottom: 12px;
-}
-
-.research-overview-text p {
-  color: #cbd5e1;
-  font-size: 1.05rem;
-  line-height: 1.65;
-}
-
-.research-talks-box {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: var(--radius-md);
-  padding: 24px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.research-talks-box svg {
-  color: #38bdf8;
-  flex-shrink: 0;
-}
-
-.research-talks-title {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #ffffff;
-}
-
-.research-talks-desc {
-  font-size: 0.9rem;
-  color: #cbd5e1;
-  margin-top: 4px;
-}
-
-.publications-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.publication-card {
-  background-color: #ffffff;
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-md);
-  padding: 28px;
-  box-shadow: var(--shadow-sm);
-  display: flex;
-  flex-direction: column;
-  transition: all var(--transition-normal);
-}
-
-.publication-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
-  border-color: rgba(15, 98, 254, 0.25);
-}
-
-.publication-field-badge {
-  align-self: flex-start;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--primary);
-  background-color: var(--primary-light);
-  padding: 4px 10px;
-  border-radius: var(--radius-pill);
-  margin-bottom: 12px;
-}
-
-.publication-topic {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 10px;
-}
-
-.publication-detail {
-  font-size: 0.925rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
-/* --------------------------------------------------------------------------
-   7. APPOINTMENT CTA BANNER
+   6. APPOINTMENT CTA BANNER
    -------------------------------------------------------------------------- */
 .appointment-cta-banner {
   background: linear-gradient(135deg, #09152b 0%, #0f2756 50%, #064e43 100%);

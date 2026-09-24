@@ -145,14 +145,6 @@
     margin: 0 auto;
   }
 
-  /* --- Research --- */
-  .research-overview-card {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-  .publications-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 
   /* --- Contact --- */
   .contact-grid {
@@ -270,10 +262,6 @@
     grid-template-columns: 1fr;
   }
 
-  /* --- Research --- */
-  .publications-grid {
-    grid-template-columns: 1fr;
-  }
 
   /* --- Treatments active panel --- */
   .treatment-active-panel {

@@ -25,11 +25,11 @@ export const IMAGES = {
     footAnkle: `${BASE}/assets/images/sports-rehab.jpg`,
   },
   facilities: {
-    consultation: `${BASE}/assets/images/dr-shashi-portrait.jpg`,
-    xray: `${BASE}/assets/images/knee-arthroscopy.jpg`,
-    physiotherapy: `${BASE}/assets/images/sports-rehab.jpg`,
-    plaster: `${BASE}/assets/images/joint-replacement.jpg`,
-    dressing: `${BASE}/assets/images/shoulder-arthroscopy.jpg`,
+    consultation: `${BASE}/assets/images/facilities/consultation.jpg`,
+    xray: `${BASE}/assets/images/facilities/digital-xray.jpg`,
+    physiotherapy: `${BASE}/assets/images/facilities/physiotherapy.jpg`,
+    plaster: `${BASE}/assets/images/facilities/plaster-pop.jpg`,
+    dressing: `${BASE}/assets/images/facilities/dressing.jpg`,
   },
   video: {
     ambient: `${BASE}/assets/videos/ortho-care-ambient.webm`,

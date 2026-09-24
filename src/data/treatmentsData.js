@@ -328,6 +328,7 @@ export const CLINIC_FACILITIES = [
     badge: "Clinical Precision",
     description: "Comprehensive in-depth physical examination, biomechanical gait evaluation, joint range-of-motion testing, and patient history review with Dr. Shashikumar M S.",
     icon: "consultation",
+    image: `${BASE}/assets/images/facilities/consultation.jpg`,
     features: ["45-60 min thorough clinical assessment", "Treatment roadmap & non-surgical priority", "Direct surgeon interaction"],
   },
   {
@@ -336,6 +337,7 @@ export const CLINIC_FACILITIES = [
     badge: "Instant Diagnostics",
     description: "High-resolution low-radiation digital radiography for immediate skeletal imaging, joint alignment assessment, and rapid fracture detection.",
     icon: "xray",
+    image: `${BASE}/assets/images/facilities/digital-xray.jpg`,
     features: ["Instant high-resolution imaging", "Low radiation exposure protocols", "Immediate on-site radiological review"],
   },
   {
@@ -344,6 +346,7 @@ export const CLINIC_FACILITIES = [
     badge: "Active Recovery",
     description: "Dedicated physical rehabilitation protocols focused on restoring muscle strength, joint mobility, posture correction, and sports return-to-play training.",
     icon: "physio",
+    image: `${BASE}/assets/images/facilities/physiotherapy.jpg`,
     features: ["Targeted muscle re-education", "Post-surgical recovery protocols", "Ergonomic & posture correction"],
   },
   {
@@ -352,6 +355,7 @@ export const CLINIC_FACILITIES = [
     badge: "Trauma Care",
     description: "Expert casting and splinting services including traditional Plaster of Paris (POP) and lightweight fiberglass casts for optimal fracture immobilization.",
     icon: "cast",
+    image: `${BASE}/assets/images/facilities/plaster-pop.jpg`,
     features: ["Precise anatomical molding", "Lightweight waterproof options", "Pain-free cast removal & follow-up"],
   },
   {
@@ -360,6 +364,7 @@ export const CLINIC_FACILITIES = [
     badge: "Sterile Care",
     description: "Hygienic, sterile wound care, post-surgical suture removal, antiseptic dressings, and minor outpatient orthopedic procedures.",
     icon: "dressing",
+    image: `${BASE}/assets/images/facilities/dressing.jpg`,
     features: ["Aseptic surgical technique", "Specialized wound healing dressings", "Fast & painless care"],
   },
 ];

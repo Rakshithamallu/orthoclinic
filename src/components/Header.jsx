@@ -9,7 +9,6 @@ const NAV_LINKS = [
   { label: 'Treatments', path: '/treatments' },
   { label: 'Conditions', path: '/conditions' },
   { label: 'Facilities', path: '/facilities' },
-  { label: 'Research', path: '/research' },
   { label: 'Blog', path: '/blog' },
   { label: 'FAQs', path: '/faqs' },
   { label: 'Contact', path: '/contact' },
@@ -21,6 +20,7 @@ const DESKTOP_PRIMARY_LINKS = [
 ];
 
 const DESKTOP_SECONDARY_LINKS = [
+  { label: 'Blog', path: '/blog' },
   { label: 'FAQs', path: '/faqs' },
   { label: 'Contact', path: '/contact' },
 ];
@@ -28,10 +28,9 @@ const DESKTOP_SECONDARY_LINKS = [
 const Header = ({ onOpenAppointmentModal }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null); // 'specialties' | 'conditions' | 'research' | null
+  const [activeDropdown, setActiveDropdown] = useState(null); // 'specialties' | 'conditions' | null
   const specialtiesRef = useRef(null);
   const conditionsRef = useRef(null);
-  const researchRef = useRef(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -52,8 +51,7 @@ const Header = ({ onOpenAppointmentModal }) => {
     const handleClickOutside = (e) => {
       const inSpecialties = specialtiesRef.current && specialtiesRef.current.contains(e.target);
       const inConditions = conditionsRef.current && conditionsRef.current.contains(e.target);
-      const inResearch = researchRef.current && researchRef.current.contains(e.target);
-      if (!inSpecialties && !inConditions && !inResearch) {
+      if (!inSpecialties && !inConditions) {
         setActiveDropdown(null);
       }
     };
@@ -76,7 +74,6 @@ const Header = ({ onOpenAppointmentModal }) => {
 
   const isSpecialtiesActive = location.pathname.startsWith('/treatments') || location.pathname.startsWith('/specialties');
   const isConditionsActive = location.pathname.startsWith('/conditions') || location.pathname.startsWith('/facilities');
-  const isResearchActive = location.pathname.startsWith('/research') || location.pathname.startsWith('/blog');
 
   return (
     <>
@@ -332,78 +329,6 @@ const Header = ({ onOpenAppointmentModal }) => {
                     <div className="nav-dropdown-text">
                       <span className="nav-dropdown-title">Clinic Facilities</span>
                       <span className="nav-dropdown-desc">Modular OT, robotic navigation & imaging</span>
-                    </div>
-                  </Link>
-                </div>
-              </div>
-
-              {/* Research Dropdown */}
-              <div
-                className={`nav-dropdown ${activeDropdown === 'research' ? 'open' : ''} ${isResearchActive ? 'active' : ''}`}
-                ref={researchRef}
-                onMouseEnter={() => setActiveDropdown('research')}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
-                <button
-                  type="button"
-                  className={`nav-item-link nav-dropdown-btn ${isResearchActive ? 'active' : ''}`}
-                  onClick={() => setActiveDropdown(prev => prev === 'research' ? null : 'research')}
-                  aria-expanded={activeDropdown === 'research'}
-                  aria-haspopup="true"
-                >
-                  <span>Research</span>
-                  <svg
-                    className="nav-dropdown-chevron"
-                    width="12"
-                    height="12"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                  </svg>
-                </button>
-
-                <div className="nav-dropdown-menu">
-                  <Link
-                    to="/research"
-                    className={`nav-dropdown-item ${isActive('/research') ? 'active' : ''}`}
-                    onClick={() => setActiveDropdown(null)}
-                  >
-                    <div className="nav-dropdown-icon">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                      </svg>
-                    </div>
-                    <div className="nav-dropdown-text">
-                      <span className="nav-dropdown-title">Research & Publications</span>
-                      <span className="nav-dropdown-desc">Clinical papers, surgical studies & trials</span>
-                    </div>
-                  </Link>
-
-                  <div className="nav-dropdown-divider" />
-
-                  <Link
-                    to="/blog"
-                    className={`nav-dropdown-item ${isActive('/blog') ? 'active' : ''}`}
-                    onClick={() => setActiveDropdown(null)}
-                  >
-                    <div className="nav-dropdown-icon">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                        <polyline points="14 2 14 8 20 8"></polyline>
-                        <line x1="16" y1="13" x2="8" y2="13"></line>
-                        <line x1="16" y1="17" x2="8" y2="17"></line>
-                        <polyline points="10 9 9 9 8 9"></polyline>
-                      </svg>
-                    </div>
-                    <div className="nav-dropdown-text">
-                      <span className="nav-dropdown-title">Orthopedic Blog</span>
-                      <span className="nav-dropdown-desc">Patient health guides, recovery & care tips</span>
                     </div>
                   </Link>
                 </div>

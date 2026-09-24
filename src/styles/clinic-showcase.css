@@ -1,0 +1,1066 @@
+/* ==========================================================================
+   CLINIC SHOWCASE: FACILITIES AVAILABLE, OUR WORK & CLINIC AMBIENCE
+   Matches authentic clinical visual assets from drshashiorthoclinic.com
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. FACILITIES AVAILABLE
+   -------------------------------------------------------------------------- */
+.facilities-available-section {
+  background-color: var(--bg-alt, #f8fafc);
+  position: relative;
+}
+
+.facilities-available-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.facility-available-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light, #e2e8f0);
+  border-radius: var(--radius-lg, 16px);
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.facility-available-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(15, 98, 254, 0.1);
+  border-color: rgba(15, 98, 254, 0.3);
+}
+
+.facility-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 190px;
+  overflow: hidden;
+  background-color: #0f172a;
+}
+
+.facility-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.facility-available-card:hover .facility-card-img {
+  transform: scale(1.08);
+}
+
+.facility-card-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #38bdf8;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.facility-card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.facility-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary, #0f172a);
+  margin-bottom: 8px;
+}
+
+.facility-card-desc {
+  font-size: 0.925rem;
+  color: var(--text-secondary, #475569);
+  line-height: 1.55;
+  margin-bottom: 18px;
+  flex: 1;
+}
+
+.facility-feature-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px dashed var(--border-light, #e2e8f0);
+  padding-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.facility-bullet-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--text-secondary, #475569);
+  font-weight: 500;
+}
+
+.facility-bullet-item svg {
+  color: #0d9488;
+  flex-shrink: 0;
+}
+
+.facilities-cta-strip {
+  background: linear-gradient(135deg, #09152b 0%, #0f2756 100%);
+  border-radius: var(--radius-lg, 16px);
+  padding: 32px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(11, 26, 56, 0.15);
+}
+
+.facilities-cta-pill {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 4px 12px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.facilities-cta-text h4 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.facilities-cta-text p {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin: 0;
+  max-width: 600px;
+}
+
+/* --------------------------------------------------------------------------
+   2. OUR WORK (SURGICAL PORTFOLIO)
+   -------------------------------------------------------------------------- */
+.our-work-section {
+  background-color: #ffffff;
+  position: relative;
+}
+
+.work-filter-bar,
+.ambience-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+
+.work-filter-btn,
+.ambience-filter-btn {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.work-filter-btn:hover,
+.ambience-filter-btn:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.work-filter-btn.active,
+.ambience-filter-btn.active {
+  background: #0f62fe;
+  color: #ffffff;
+  border-color: #0f62fe;
+  box-shadow: 0 4px 12px rgba(15, 98, 254, 0.25);
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 32px;
+}
+
+.work-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light, #e2e8f0);
+  border-radius: var(--radius-lg, 16px);
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
+  border-color: #0f62fe;
+}
+
+.work-img-container {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  background: #090e1a;
+  overflow: hidden;
+}
+
+.work-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.work-card:hover .work-img {
+  transform: scale(1.06);
+}
+
+.work-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 26, 56, 0.6);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.work-card:hover .work-overlay {
+  opacity: 1;
+}
+
+.work-zoom-badge {
+  background: rgba(255, 255, 255, 0.95);
+  color: #0f172a;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transform: translateY(10px);
+  transition: transform 0.3s ease;
+}
+
+.work-card:hover .work-zoom-badge {
+  transform: translateY(0);
+}
+
+.work-tag-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(15, 23, 42, 0.85);
+  color: #38bdf8;
+  font-size: 0.725rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+.work-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.work-category {
+  font-size: 0.775rem;
+  font-weight: 700;
+  color: #0d9488;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.work-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.work-desc {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.55;
+  margin-bottom: 18px;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.work-footer-meta {
+  border-top: 1px solid #f1f5f9;
+  padding-top: 14px;
+}
+
+.work-outcome-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: #0d9488;
+}
+
+.work-bottom-note {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-md, 12px);
+  padding: 16px 20px;
+  margin-top: 24px;
+}
+
+.work-bottom-note p {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.825rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.work-bottom-note svg {
+  color: #0f62fe;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   3. OUR CLINIC AMBIENCE
+   -------------------------------------------------------------------------- */
+.clinic-ambience-section {
+  background-color: var(--bg-alt, #f8fafc);
+  position: relative;
+}
+
+.ambience-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin-bottom: 44px;
+}
+
+.ambience-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light, #e2e8f0);
+  border-radius: var(--radius-lg, 16px);
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.ambience-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.1);
+  border-color: #0f62fe;
+}
+
+.ambience-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 210px;
+  background: #0f172a;
+  overflow: hidden;
+}
+
+.ambience-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ambience-card:hover .ambience-img {
+  transform: scale(1.08);
+}
+
+.ambience-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.2) 60%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ambience-card:hover .ambience-card-overlay {
+  opacity: 1;
+}
+
+.ambience-expand-btn {
+  align-self: flex-end;
+  width: 38px;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #0f172a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.ambience-overlay-title {
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.ambience-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(15, 23, 42, 0.8);
+  color: #38bdf8;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+.ambience-card-caption {
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.ambience-title {
+  font-size: 1.025rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+  line-height: 1.35;
+}
+
+.ambience-desc {
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ambience-visit-card {
+  background: linear-gradient(135deg, #09152b 0%, #0f2756 60%, #064e43 100%);
+  border-radius: var(--radius-xl, 20px);
+  padding: 36px 44px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  box-shadow: 0 12px 30px rgba(11, 26, 56, 0.18);
+}
+
+.ambience-visit-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 4px 14px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+}
+
+.ambience-visit-heading {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.ambience-visit-address {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin-bottom: 12px;
+  max-width: 580px;
+  line-height: 1.55;
+}
+
+.ambience-visit-hours {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: #94a3b8;
+}
+
+.hours-dot {
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 8px #10b981;
+}
+
+.ambience-visit-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 200px;
+}
+
+/* --------------------------------------------------------------------------
+   4. LIGHTBOX MODAL (FOR BOTH OUR WORK & AMBIENCE)
+   -------------------------------------------------------------------------- */
+.work-lightbox-overlay,
+.ambience-lightbox-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(9, 14, 26, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: lightboxFadeIn 0.25s ease-out;
+}
+
+@keyframes lightboxFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.work-lightbox-dialog {
+  background: #ffffff;
+  border-radius: var(--radius-xl, 20px);
+  width: 100%;
+  max-width: 960px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+  animation: lightboxSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ambience-lightbox-box {
+  background: #ffffff;
+  border-radius: var(--radius-xl, 20px);
+  width: 100%;
+  max-width: 860px;
+  max-height: 90vh;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+  animation: lightboxSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes lightboxSlideUp {
+  from { transform: translateY(20px) scale(0.97); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.work-lightbox-close,
+.ambience-lightbox-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.work-lightbox-close:hover,
+.ambience-lightbox-close:hover {
+  background: #ef4444;
+  transform: rotate(90deg);
+}
+
+.work-lightbox-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 480px;
+}
+
+.work-lightbox-media {
+  position: relative;
+  background: #090e1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.work-lightbox-img {
+  max-width: 100%;
+  max-height: 520px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.ambience-lightbox-view {
+  position: relative;
+  background: #090e1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 480px;
+}
+
+.ambience-lightbox-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.work-lightbox-nav,
+.ambience-lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.work-lightbox-nav:hover,
+.ambience-lightbox-nav:hover {
+  background: #0f62fe;
+}
+
+.work-lightbox-nav.prev,
+.ambience-lightbox-nav.prev {
+  left: 16px;
+}
+
+.work-lightbox-nav.next,
+.ambience-lightbox-nav.next {
+  right: 16px;
+}
+
+.work-lightbox-info {
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.work-lightbox-tag {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #0f62fe;
+  background: #eff6ff;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  margin-bottom: 8px;
+}
+
+.work-lightbox-category {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.work-lightbox-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.35;
+  margin-bottom: 16px;
+}
+
+.work-lightbox-detail-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.work-lightbox-field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.field-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  color: #94a3b8;
+}
+
+.field-val {
+  font-size: 0.925rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.work-lightbox-desc {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.work-lightbox-actions {
+  margin-top: auto;
+}
+
+.ambience-lightbox-footer {
+  padding: 24px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: #ffffff;
+}
+
+.ambience-lightbox-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #0d9488;
+  background: #f0fdfa;
+  padding: 2px 10px;
+  border-radius: 9999px;
+  margin-bottom: 4px;
+}
+
+.ambience-lightbox-meta h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.ambience-lightbox-meta p {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin: 0;
+  max-width: 580px;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE QUERIES
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .work-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .ambience-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  .facilities-cta-strip {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 28px 24px;
+    gap: 20px;
+  }
+  .ambience-visit-card {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 30px 28px;
+    gap: 24px;
+  }
+  .ambience-visit-actions {
+    width: 100%;
+    flex-direction: row;
+    gap: 12px;
+  }
+  .ambience-visit-actions .btn {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .facilities-available-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .work-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .ambience-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .work-filter-bar,
+  .ambience-filter-bar {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+    margin-bottom: 24px;
+    scrollbar-width: none;
+  }
+  .work-filter-bar::-webkit-scrollbar,
+  .ambience-filter-bar::-webkit-scrollbar {
+    display: none;
+  }
+  .work-filter-btn,
+  .ambience-filter-btn {
+    flex-shrink: 0;
+    font-size: 0.825rem;
+    padding: 7px 15px;
+  }
+
+  /* Lightbox Modal on Tablets */
+  .work-lightbox-overlay,
+  .ambience-lightbox-backdrop {
+    padding: 14px;
+  }
+  .work-lightbox-content {
+    grid-template-columns: 1fr;
+  }
+  .work-lightbox-media {
+    max-height: 360px;
+    padding: 12px;
+  }
+  .work-lightbox-info {
+    padding: 24px 20px;
+  }
+  .ambience-lightbox-view {
+    height: 340px;
+  }
+  .ambience-lightbox-footer {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 18px 20px;
+    gap: 16px;
+  }
+  .ambience-visit-actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .facility-img-wrap {
+    height: 180px;
+  }
+  .facility-card-body {
+    padding: 18px 16px;
+  }
+  .facility-card-title {
+    font-size: 1.15rem;
+  }
+  .facility-card-desc {
+    font-size: 0.88rem;
+    margin-bottom: 14px;
+  }
+  .facilities-cta-strip {
+    padding: 22px 18px;
+  }
+  .facilities-cta-text h4 {
+    font-size: 1.25rem;
+  }
+  .facilities-cta-text p {
+    font-size: 0.88rem;
+  }
+
+  /* Ambience Grid on phones */
+  .ambience-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .ambience-img-wrap {
+    height: 200px;
+  }
+  .ambience-visit-card {
+    padding: 24px 18px;
+  }
+  .ambience-visit-heading {
+    font-size: 1.35rem;
+  }
+  .ambience-visit-address {
+    font-size: 0.88rem;
+  }
+  .ambience-visit-hours {
+    font-size: 0.8rem;
+    flex-wrap: wrap;
+  }
+
+  /* Work Grid on phones */
+  .work-img-container {
+    height: 210px;
+  }
+  .work-content {
+    padding: 18px 16px;
+  }
+  .work-title {
+    font-size: 1.05rem;
+  }
+  .work-desc {
+    font-size: 0.85rem;
+  }
+
+  /* Lightbox Modal on Phones */
+  .work-lightbox-overlay,
+  .ambience-lightbox-backdrop {
+    padding: 8px;
+  }
+  .work-lightbox-dialog,
+  .ambience-lightbox-box {
+    border-radius: 14px;
+    max-height: 94vh;
+  }
+  .work-lightbox-close,
+  .ambience-lightbox-close {
+    top: 10px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+  }
+  .work-lightbox-media {
+    max-height: 260px;
+  }
+  .work-lightbox-img {
+    max-height: 250px;
+  }
+  .work-lightbox-info {
+    padding: 18px 16px;
+  }
+  .work-lightbox-title {
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+  }
+  .work-lightbox-detail-box {
+    padding: 12px;
+    gap: 6px;
+  }
+  .work-lightbox-desc {
+    font-size: 0.88rem;
+    margin-bottom: 16px;
+  }
+  .ambience-lightbox-view {
+    height: 260px;
+  }
+  .ambience-lightbox-footer {
+    padding: 14px 16px;
+  }
+  .ambience-lightbox-meta h4 {
+    font-size: 1.1rem;
+  }
+  .ambience-lightbox-meta p {
+    font-size: 0.825rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .facility-img-wrap,
+  .work-img-container,
+  .ambience-img-wrap {
+    height: 170px;
+  }
+  .facilities-cta-text h4 {
+    font-size: 1.1rem;
+  }
+  .ambience-visit-heading {
+    font-size: 1.2rem;
+  }
+  .work-lightbox-media {
+    max-height: 220px;
+  }
+  .ambience-lightbox-view {
+    height: 220px;
+  }
+  .work-lightbox-nav,
+  .ambience-lightbox-nav {
+    width: 34px;
+    height: 34px;
+  }
+}

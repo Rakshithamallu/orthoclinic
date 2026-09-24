@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Facilities from '../components/Facilities';
+import FacilitiesAvailable from '../components/FacilitiesAvailable';
+import ClinicAmbience from '../components/ClinicAmbience';
+import OurWork from '../components/OurWork';
 import { CLINIC_INFO } from '../data/doctorData';
 
 const FacilitiesPage = ({ onOpenAppointmentModal }) => {
@@ -12,18 +14,25 @@ const FacilitiesPage = ({ onOpenAppointmentModal }) => {
           <nav className="breadcrumbs" aria-label="Breadcrumb">
             <Link to="/">Home</Link>
             <span className="breadcrumb-separator">/</span>
-            <span className="breadcrumb-current">Facilities & Infrastructure</span>
+            <span className="breadcrumb-current">Facilities & Ambience</span>
           </nav>
 
-          <span className="section-badge teal">MODERN INFRASTRUCTURE</span>
-          <h1 className="subpage-hero-title">Clinic Infrastructure & Diagnostics</h1>
+          <span className="section-badge teal">MODERN CLINICAL INFRASTRUCTURE</span>
+          <h1 className="subpage-hero-title">Clinic Facilities & Ambience</h1>
           <p className="subpage-hero-sub">
-            Equipped with on-site digital X-rays, specialized physical therapy rehabilitation, sterile plaster application, and minor procedure suites in Mysuru.
+            Equipped with on-site digital X-rays, specialized physical therapy rehabilitation, sterile plaster application, and modern consultation suites in JP Nagar, Mysuru.
           </p>
         </div>
       </section>
 
-      <Facilities />
+      {/* Facilities Available with authentic photos */}
+      <FacilitiesAvailable onOpenAppointmentModal={onOpenAppointmentModal} />
+
+      {/* Our Clinic Ambience Virtual Tour */}
+      <ClinicAmbience onOpenAppointmentModal={onOpenAppointmentModal} />
+
+      {/* Our Clinical Work Showcase */}
+      <OurWork onOpenAppointmentModal={onOpenAppointmentModal} />
 
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">

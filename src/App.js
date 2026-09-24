@@ -14,6 +14,7 @@ import './styles/loading-screen.css';
 import './styles/animations.css';
 import './styles/social-reels.css';
 import './styles/clinical-excellence.css';
+import './styles/clinic-showcase.css';
 import './styles/responsive.css';
 
 // Components
@@ -35,7 +36,6 @@ import TreatmentDetailPage from './pages/TreatmentDetailPage';
 import ConditionsPage from './pages/ConditionsPage';
 import ConditionDetailPage from './pages/ConditionDetailPage';
 import FacilitiesPage from './pages/FacilitiesPage';
-import ResearchPage from './pages/ResearchPage';
 import BlogPage from './pages/BlogPage';
 import BlogDetailPage from './pages/BlogDetailPage';
 import FaqPage from './pages/FaqPage';
@@ -83,7 +83,6 @@ function App() {
             <Route path="/conditions" element={<ConditionsPage onOpenAppointmentModal={handleOpenAppointmentModal} />} />
             <Route path="/conditions/:conditionId" element={<ConditionDetailPage onOpenAppointmentModal={handleOpenAppointmentModal} />} />
             <Route path="/facilities" element={<FacilitiesPage onOpenAppointmentModal={handleOpenAppointmentModal} />} />
-            <Route path="/research" element={<ResearchPage onOpenAppointmentModal={handleOpenAppointmentModal} />} />
             <Route path="/blog" element={<BlogPage onOpenAppointmentModal={handleOpenAppointmentModal} />} />
             <Route path="/blog/:articleId" element={<BlogDetailPage onOpenAppointmentModal={handleOpenAppointmentModal} />} />
             <Route path="/faqs" element={<FaqPage onOpenAppointmentModal={handleOpenAppointmentModal} />} />

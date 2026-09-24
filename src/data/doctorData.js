@@ -46,7 +46,7 @@ export const DOCTOR_INFO = {
     { value: 8, suffix: "+", label: "Years of Clinical Experience", desc: "Dedicated surgical and conservative orthopedic practice" },
     { value: 2000, suffix: "+", label: "Successful Surgeries", desc: "Joint replacements, arthroscopies, and trauma fixations" },
     { value: 3000, suffix: "+", label: "Patients Treated", desc: "Regaining painless, active movement and strength" },
-    { value: 10, suffix: "+", label: "Research Publications", desc: "In indexed national and international medical journals" },
+    { value: 99, suffix: "%", label: "Patient Satisfaction", desc: "Dedicated pre- and post-operative recovery care" },
   ],
   bioSummary: "Dr. Shashikumar M S (MBBS, MS Orthopaedics) is an accomplished orthopedic surgeon in Mysore, Karnataka, currently practicing at Dr. Shashi’s Ortho Clinic and JSS Hospital. With over 8+ years of clinical experience, Dr. Shashikumar M S is renowned for his expertise in shoulder and knee surgery, sports injury management, arthroscopic procedures of knee & shoulder, and joint replacement procedures of the knee, hip & shoulder.",
   clinicalPhilosophy: "We focus on delivering advanced and compassionate orthopedic care. Whether your condition requires cutting-edge robotic joint replacement, minimally invasive keyhole arthroscopy, or structured non-surgical therapy with medications and rehabilitation, every patient receives a personalized, evidence-based treatment plan tailored for long-term recovery.",
@@ -123,43 +123,6 @@ export const DOCTOR_INFO = {
       badge: "Trauma & Reconstruction",
     },
   ],
-  research: {
-    heading: "Research, Publications & Academic Contributions",
-    summary: "Dr. Shashikumar M S has authored more than 10 research publications in renowned national and international orthopedic journals, with critical scientific investigations advancing contemporary surgical technique.",
-    conferenceTalks: "Delivered more than four scientific talks and faculty lectures at state and national orthopedic conferences across India.",
-    publicationTopics: [
-      {
-        topic: "Rotator Cuff Pathology & Repair",
-        field: "Shoulder Surgery",
-        detail: "Biomechanical efficacy and functional outcomes of arthroscopic rotator cuff repair techniques.",
-      },
-      {
-        topic: "ACL Reconstruction Techniques",
-        field: "Knee Arthroscopy",
-        detail: "Graft tensioning, isometric anatomical placement, and athletic return-to-play protocols.",
-      },
-      {
-        topic: "Tuberculosis of the Spine (TB Spine)",
-        field: "Spine Pathology",
-        detail: "Clinical assessment, conservative chemotherapy regimens, and indications for surgical stabilization.",
-      },
-      {
-        topic: "Degenerative Knee Osteoarthritis",
-        field: "Joint Preservation",
-        detail: "Critical biomechanical insights on cartilage degradation and coronal malalignment.",
-      },
-      {
-        topic: "Knee & Shoulder Alignment Biomechanics",
-        field: "Biomechanical Alignment",
-        detail: "Analysis of dynamic load distribution and implant longevity in corrective procedures.",
-      },
-      {
-        topic: "Scapulohumeral Alignment in Shoulder Dynamics",
-        field: "Shoulder Biomechanics",
-        detail: "Investigation of scapular rhythm and glenohumeral kinematics during sports maneuvers.",
-      },
-    ],
-  },
   disclaimer: "Information provided on this website is for general informational and educational purposes only and does not substitute for professional clinical consultation, diagnosis, or personalized medical care.",
 };
 

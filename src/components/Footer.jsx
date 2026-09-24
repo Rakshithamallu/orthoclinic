@@ -39,7 +39,6 @@ const Footer = ({ onOpenAppointmentModal }) => {
               <Link to="/treatments" className="footer-nav-link">Treatments</Link>
               <Link to="/conditions" className="footer-nav-link">Conditions</Link>
               <Link to="/facilities" className="footer-nav-link">Facilities</Link>
-              <Link to="/research" className="footer-nav-link">Research & Talks</Link>
               <Link to="/blog" className="footer-nav-link">Blog & Guides</Link>
               <Link to="/faqs" className="footer-nav-link">FAQs</Link>
               <Link to="/contact" className="footer-nav-link">Contact</Link>
