@@ -117,7 +117,7 @@ const ClinicAmbience = ({ onOpenAppointmentModal }) => {
             </p>
             <div className="ambience-visit-hours">
               <span className="hours-dot" />
-              <span>Consultation Hours: <strong>{CLINIC_INFO.timings.evening}</strong> (Monday – Saturday)</span>
+              <span>Consultation Hours: <strong>{CLINIC_INFO.consultationTimings || "5:30 PM – 8:30 PM"}</strong> ({CLINIC_INFO.consultationDays || "Monday – Saturday"})</span>
             </div>
           </div>
 
@@ -129,7 +129,7 @@ const ClinicAmbience = ({ onOpenAppointmentModal }) => {
               Book Appointment
             </button>
             <a
-              href={CLINIC_INFO.address.mapLink}
+              href={CLINIC_INFO.address?.mapsUrl || CLINIC_INFO.address?.mapLink || "#"}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-secondary btn-md"

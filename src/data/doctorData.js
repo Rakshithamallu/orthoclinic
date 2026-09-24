@@ -13,6 +13,10 @@ export const CLINIC_INFO = {
   email: "shashikumar859@gmail.com",
   consultationTimings: "5:30 PM – 8:30 PM",
   consultationDays: "Monday to Saturday",
+  timings: {
+    evening: "5:30 PM – 8:30 PM",
+    days: "Monday to Saturday",
+  },
   address: {
     line1: "19, 10th cross, Opp. MORE Supermarket",
     area: "C-Block, JP Nagar",
@@ -21,6 +25,7 @@ export const CLINIC_INFO = {
     pincode: "570008",
     full: "19, 10th cross, Opp. MORE Supermarket, C-Block, JP Nagar, Mysuru, Karnataka 570008",
     mapsUrl: "https://www.google.com/maps/search/?api=1&query=19+10th+cross+Opp+MORE+Supermarket+C-Block+JP+Nagar+Mysuru+Karnataka+570008",
+    mapLink: "https://www.google.com/maps/search/?api=1&query=19+10th+cross+Opp+MORE+Supermarket+C-Block+JP+Nagar+Mysuru+Karnataka+570008",
   },
   whatsappUrl: "https://wa.me/916361446411?text=Hello%20Dr.%20Shashi%27s%20Ortho%20Clinic,%20I%20would%20like%20to%20consult%20regarding%20an%20orthopedic%20appointment.",
   instagramUrl: "https://www.instagram.com/dr.shashi_ortho_clinic?stkn=MTYwMGR1djNtcmxreQ==",
